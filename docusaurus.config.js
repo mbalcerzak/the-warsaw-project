@@ -4,23 +4,21 @@ const siteYear = startYear == currentYear ? String(startYear) : `${startYear} - 
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "法國 COVID-19 日誌",
-  tagline: "一本記錄法國新冠肺炎 (COVID-19) 的日誌",
+  title: "Warsaw flats",
+  tagline: "Tagline",
   url: "https://covid-fr.misterfishup.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
-  organizationName: "MisterFISHUP",
-  projectName: "covid-19-in-france",
+  organizationName: "MAB Data",
+  projectName: "mabdata",
   i18n: {
     defaultLocale: "zh-Hant",
     locales: ["zh-Hant", "zh-Hans", "en", "fr"],
     localeConfigs: {
-      "zh-Hant": { label: "正體中文" },
-      "zh-Hans": { label: "简体中文" },
       en: { label: "English" },
-      fr: { label: "Français" },
+      pl: { label: "Polski" },
     },
   },
   themeConfig: {
@@ -55,7 +53,7 @@ module.exports = {
     navbar: {
       hideOnScroll: true,
       // style: 'primary', // or 'dark'
-      title: "法國 COVID-19 日誌",
+      title: "Warsaw flats",
       logo: {
         alt: "Website Logo",
         src: "img/logo.svg",
@@ -64,31 +62,31 @@ module.exports = {
       items: [
         {
           to: "digest",
-          label: "日誌序",
+          label: "Digest",
           activeBaseRegex: "digest/?$",
         },
         {
           type: "doc",
           docId: "2021/intro",
-          label: "2021 年",
+          label: "2021",
         },
         {
           type: "doc",
           docId: "2020/december/31",
-          label: "2020 年",
+          label: "2020",
         },
         {
           to: "charts",
-          label: "數據圖表",
+          label: "charts",
         },
         {
           type: "doc",
           docId: "sources",
-          label: "附錄",
+          label: "sources",
         },
         {
           to: "about",
-          label: "關於本站",
+          label: "about",
           position: "right",
         },
         {
@@ -112,7 +110,7 @@ module.exports = {
           items: [
             {
               html: `
-                <img src="/img/logo.svg" alt="法國 COVID-19 日誌 | Daily Digest - COVID-19 IN FRANCE" title="法國 COVID-19 日誌 | Daily Digest - COVID-19 IN FRANCE" class="footer-logo"/>
+                <img src="/img/logo.svg" alt="Warsaw flats | Daily Digest - COVID-19 IN FRANCE" title="Warsaw flats | Daily Digest - COVID-19 IN FRANCE" class="footer-logo"/>
               `,
             },
           ],
@@ -158,15 +156,15 @@ module.exports = {
           ],
         },
         {
-          title: "其他",
+          title: "Contact",
           items: [
             {
-              label: "聯絡資訊",
+              label: "Contact me",
               to: "about#contact",
             },
             {
-              label: "支持本站 🍰",
-              href: "https://www.buymeacoffee.com/misterfishup",
+              label: "Buy me a coffee",
+              href: "https://www.buymeacoffee.com/mabdata",
             },
             {
               label: "GitHub",
@@ -175,7 +173,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${siteYear} 法國 COVID-19 日誌`,
+      copyright: `Copyright © ${siteYear} Warsaw flats`,
     },
   },
   presets: [

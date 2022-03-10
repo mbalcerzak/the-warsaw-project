@@ -1,6 +1,6 @@
 ---
-title: 數據圖表 - 法國疫情數據視覺化
-description: 視覺化法國新冠肺炎 (Covid-19) 數據，讓法國疫情現況與趨勢一目了然
+title: Charts
+description: Some charts
 ---
 
 import { digestLatestDate2021 } from "@site/src/scripts/dateVariables";
@@ -14,57 +14,48 @@ import { IncidRTrend } from "@site/src/scripts/charts-components/IncidR";
 import { PosRTrend } from "@site/src/scripts/charts-components/PosR";
 import { RTrend } from "@site/src/scripts/charts-components/R";
 
-<h1 className="pages--h1">數據圖表</h1>
+<h1 className="pages--h1">Charts</h1>
 
-<p className="subtitle">視覺化法國新冠肺炎 (Covid-19) 數據，讓法國疫情現況與趨勢一目了然</p>
+<p className="subtitle">charts...</p>
 
 <div className="comment--translc_gray">
   🔄 最後更新日期：2021 年 {digestLatestDate2021.m} 月 {digestLatestDate2021.d} 日
 </div>
 
 <em>
-  數據來源：請參考附錄<Link to="/digest/sources">資料來源</Link>
+  Sources<Link to="/digest/sources">Sources</Link>
 </em>
 
-## 確診數 {#confirmed-cases}
-
-透過 RT-PCR 檢測或抗原檢測陽性的確診病例數。資料可能因篩檢量（如週末篩檢量減少）和獲得結果所需時間不同而有很大差異。
+## confirmed-case {#confirmed-cases}
 
 <CasesTrend />
 
-## 死亡數 {#deaths}
+## deaths {#deaths}
 
 <DeathsTrend />
 
-## 疫苗接種數 {#vaccinations}
+## vaccinations {#vaccinations}
 
 <VacDashboard />
 
-## 重症病房佔有率 {#icu-bed-occupancy-rate}
-
-目前在重症病房的 COVID-19 患者人數與重症病房初始床位（也就是疫情前）總數的比例。
+## cu-bed-occupancy-rate {#icu-bed-occupancy-rate}
 
 <IcuOccupRTrend />
 
-## 每 10 萬人確診數 {#incidence-rate}
-
-在一個滾動周內，60 天以上首次檢測呈陽性的人數（RT-PCR 和抗原檢測）對上全法國人口數。此數值可能會因篩檢活動和獲得結果所需時間而波動。
+## incidence-rate {#incidence-rate}
 
 <IncidRTrend />
 
-## RT-PCR 陽性確診率 {#positivity-rate}
-
-新的陽性檢測人數佔某一時期首次陽性和陰性檢測的總人數的比例。
+## RT-PCR Positivity Rate {#positivity-rate}
 
 <PosRTrend />
 
-## 有效傳染數 (R) {#effective-reproduction-number}
-
-一個病人平均可以感染的人數。有效傳染數可能會因篩檢活動和獲得結果所需時間而波動。
+## Effective Reproduction number (R) {#effective-reproduction-number}
 
 <RTrend />
 
 <br />
+
 <div className="flex-center--wrap">
   <DigestLinkButton linkType="latest" isButtonOutline={true} buttonText="返回最新一篇日誌" />
   <DigestLinkButton linkType="random" isButtonOutline={false} buttonText="閱讀隨機一篇日誌" />

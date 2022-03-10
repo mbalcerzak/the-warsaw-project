@@ -9,13 +9,13 @@
 }
 
 .heroLogo {
-  width: 400px;
+  width: 800px;
   margin: 16px 30px;
   float: right;
-  transition: transform 0.2s ease-in-out;
-  &:hover {
-    transform: scale(1.15) rotate(2deg);
-  }
+  // transition: transform 0.2s ease-in-out;
+  // &:hover {
+  //   transform: scale(1.15) rotate(2deg);
+  // }
 }
 
 .heroTitle {

@@ -1,11 +1,11 @@
 ---
 title: 內容與格式規範
-description: 這本法國 COVID-19 日誌使用的內容與格式規範
+description: 這本Warsaw flats使用的內容與格式規範
 ---
 
 import { DigestLinkButton } from "@site/src/scripts/components/DigestLinkButton";
 
-![法國 COVID-19 日誌內容與格式規範](/img/digest/formatting.jpg)
+![Warsaw flats內容與格式規範](/img/digest/formatting.jpg)
 
 ## 用詞與翻譯 {#wording-and-translation}
 

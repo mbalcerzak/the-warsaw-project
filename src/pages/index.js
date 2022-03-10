@@ -14,28 +14,28 @@ import { DeathsTrend } from "@site/src/scripts/charts-components/Deaths";
 
 const features = [
   {
-    title: translate({ id: "homepage.features.officialStatistics.title", message: "法國官方數據" }),
-    imageUrl: "img/features/covid_data.svg",
+    title: translate({ id: "homepage.features.officialStatistics.title", message: "...What market crash?" }),
+    imageUrl: "img/features/growth_curve.svg",
     description: translate({
       id: "homepage.features.officialStatistics.description",
       message:
-        "提供每日官方數據，包含確診數、死亡數、疫苗接種數等，以及各項指標數據如有效傳染數、陽性確診率、重症病房佔有率等等",
+        "Have they been telling you too how you should wait with buying a flat because the bubble will burst any time now? lol.",
     }),
   },
   {
-    title: translate({ id: "homepage.features.news.title", message: "疫情新聞整理" }),
-    imageUrl: "img/features/newspaper.svg",
+    title: translate({ id: "homepage.features.news.title", message: "They get sold in hours" }),
+    imageUrl: "img/features/for_sale.svg",
     description: translate({
       id: "homepage.features.news.description",
-      message: "條列式扼要呈現每日疫情媒體報導、提供相關新聞報導或影片連結",
+      message: "Don't. Even. Bother.",
     }),
   },
   {
-    title: translate({ id: "homepage.features.pressConference.title", message: "新冠肺炎記者會重點" }),
-    imageUrl: "img/features/press_conference.svg",
+    title: translate({ id: "homepage.features.pressConference.title", message: "We have been using AI to predict house prices..." }),
+    imageUrl: "img/features/analytics.svg",
     description: translate({
       id: "homepage.features.pressConference.description",
-      message: "提供記者會重點整理、總統談話摘要、封城或宵禁政策措施整理、疫情新限制措施整理",
+      message: "...and after seeing the result decided to move to Spain.",
     }),
   },
 ];
@@ -61,20 +61,20 @@ function Banner() {
       <div className="container">
         <Link
           to={`/digest/2021/${monthEnLower(digestLatestDate2021.m)}/${digestLatestDate2021.d}`}
-          title={translate({ id: "homepage.hero.logoLink.title", message: "點我直接閱讀最新一篇日誌" })}
+          title={translate({ id: "homepage.hero.logoLink.title", message: "logoLink Title" })}
         >
-          <img className={styles.heroLogo} src={useBaseUrl("/img/logo.svg")} alt="Website Logo" />
+          <img className={styles.heroLogo} src={useBaseUrl("/img/city_girl.svg")} alt="Website Logo" />
         </Link>
         <div className={styles.heroText}>
           <h1 className={styles.heroTitle}>
-            <Translate id="homepage.hero.title">法國 COVID-19 日誌</Translate>
+            <Translate id="homepage.hero.title">Warsaw flats</Translate>
           </h1>
           <p
             className={styles.heroTagline}
             dangerouslySetInnerHTML={{
               __html: translate({
                 id: "homepage.hero.tagline",
-                message: "一本記錄<b>法國新冠肺炎疫情</b>的日誌",
+                message: "Roses are red<br>Violets are blue<br>I can't afford a flat<br>And neither can you &#129394",
                 description: "Homepage hero tagline, can contain simple html tags",
               }),
             }}
@@ -84,7 +84,7 @@ function Banner() {
               className={clsx("button button--outline button--primary button--lg", styles.btnCta)}
               to={useBaseUrl("digest")}
             >
-              <Translate id="homepage.hero.button.learnMore">了解更多</Translate>
+              <Translate id="homepage.hero.button.learnMore">Learn More</Translate>
             </Link>
           </div>
         </div>
@@ -108,10 +108,10 @@ function LatestOfficalData() {
       <div className="container">
         <div className="text--center margin-vert--lg">
           <h1>
-            <Translate id="homepage.LatestOfficialData.title">法國疫情速覽</Translate>
+            <Translate id="homepage.LatestOfficialData.title">Latest Official Data</Translate>
           </h1>
           <h3>
-            <Translate id="homepage.LatestOfficialData.dateTitle">日期：</Translate>
+            <Translate id="homepage.LatestOfficialData.dateTitle">Date:</Translate>
             <DatePicker
               className={styles.DatePicker}
               onChange={onChange}
@@ -119,7 +119,7 @@ function LatestOfficalData() {
               minDate={new Date(2020, 3 - 1, 2)}
               maxDate={new Date(2021, m - 1, d)}
               clearIcon={null}
-              format={translate({ id: "homepage.LatestOfficialData.dateFormat", message: "y 年 M 月 d 日" })}
+              format={translate({ id: "homepage.LatestOfficialData.dateFormat", message: "y Year M Month d Day" })}
               calendarAriaLabel="Toggle calendar"
               dayAriaLabel="Day"
               monthAriaLabel="Month"
@@ -134,7 +134,7 @@ function LatestOfficalData() {
           className={clsx("button button--outline button--primary button--lg", styles.btnCta)}
           to={linkToLatestDigest}
         >
-          <Translate id="homepage.LatestOfficialData.button.readTheLatestDigest">閱讀最新一篇日誌</Translate>
+          <Translate id="homepage.LatestOfficialData.button.readTheLatestDigest">Latest Official Digest</Translate>
         </Link>
       </div>
     </section>
@@ -156,7 +156,7 @@ function Features() {
           className={clsx("button button--outline button--primary button--lg", styles.btnCta)}
           to={useBaseUrl("digest")}
         >
-          <Translate id="homepage.features.button.startReading">開始閱讀</Translate>
+          <Translate id="homepage.features.button.startReading">Learn More!</Translate>
         </Link>
       </div>
     </section>
@@ -173,7 +173,7 @@ function SomeCharts() {
       <div className="container">
         <div className="text--center margin-top--lg">
           <h1>
-            <Translate id="homepage.SomeCharts.title">數據圖表</Translate>
+            <Translate id="homepage.SomeCharts.title">Some Charts</Translate>
           </h1>
           <h3>
             <Translate
@@ -184,7 +184,7 @@ function SomeCharts() {
                 year,
               }}
             >
-              {"最後更新：{year} 年 {month} 月 {day} 日"}
+              {"最後更新：{year} Year {month} Month {day} Day"}
             </Translate>
           </h3>
         </div>
@@ -202,7 +202,7 @@ function SomeCharts() {
           className={clsx("button button--outline button--primary button--lg", styles.btnCta)}
           to={useBaseUrl("charts")}
         >
-          <Translate id="homepage.SomeCharts.button.seeMoreCharts">看更多數據圖表</Translate>
+          <Translate id="homepage.SomeCharts.button.seeMoreCharts">See More Charts</Translate>
         </Link>
       </div>
     </section>
@@ -210,10 +210,10 @@ function SomeCharts() {
 }
 
 export default function Home() {
-  const title = translate({ id: "homepage.title", message: "首頁" });
+  const title = translate({ id: "homepage.title", message: "Home" });
   const description = translate({
     id: "homepage.description",
-    message: "一本記錄法國新冠肺炎 (COVID-19) 的日誌，提供法國每日疫情數據以及新聞重點整理",
+    message: "Homepage description",
   });
 
   return (
