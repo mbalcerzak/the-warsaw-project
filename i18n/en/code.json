@@ -1,0 +1,469 @@
+{
+  "theme.NotFound.title": {
+    "message": "Page Not Found",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Close",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Blog list page navigation",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Newer Entries",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Older Entries",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Tags:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read More",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Blog post page navigation",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Newer Post",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Older Post",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "View All Tags",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Docs pages navigation",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Previous",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Next",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.sidebar.responsiveCloseButtonLabel": {
+    "message": "Close menu",
+    "description": "The ARIA label for close button of mobile doc sidebar"
+  },
+  "theme.docs.sidebar.responsiveOpenButtonLabel": {
+    "message": "Open menu",
+    "description": "The ARIA label for open button of mobile doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
+    "description": "The label userd to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "latest version",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Edit this page",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Direct link to heading",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " on {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " by {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Last updated{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Skip to main content",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "digestComp.VacCumul.title": {
+    "message": "💉 Cumulative Vaccinations",
+    "description": "The heading of VacCumul"
+  },
+  "digestComp.VacCumul.vac1": {
+    "message": "First doses: ",
+    "description": "The description for vac1 in VacCumul"
+  },
+  "digestComp.VacCumul.vac2": {
+    "message": "Second doses: ",
+    "description": "The description for vac2 in VacCumul"
+  },
+  "digestComp.Subtitle": {
+    "message": "Daily digest of COVID-19 in France on {d} {month_en} {y}. Day {n}.",
+    "description": "The subtitle of a daily digest"
+  },
+  "digestComp.Figure.defaultCaption": {
+    "message": "Covid-19 in France on {d} {month_en} {y}",
+    "description": "The default image caption in Figure"
+  },
+  "digestComp.ChartCases.label.total": {
+    "message": "Total cases",
+    "description": "The label for total cases in ChartCases"
+  },
+  "digestComp.ChartCases.label.new": {
+    "message": "New cases",
+    "description": "The label for new cases in ChartCases"
+  },
+  "digestComp.ChartCases.title": {
+    "message": "Confirmed cases - Trend over the last two weeks",
+    "description": "The title of ChartCases"
+  },
+  "digestComp.Indicators.title": {
+    "message": "📊 Monitoring Indicators",
+    "description": "The heading of Indicators"
+  },
+  "digestComp.Indicators.incidR": {
+    "message": "Incidence rate: ",
+    "description": "The description for incidR in Indicators"
+  },
+  "digestComp.Indicators.icuOccupR": {
+    "message": "ICU bed occupancy rate: ",
+    "description": "The description for icuOccupR in Indicators"
+  },
+  "digestComp.Indicators.r": {
+    "message": "Effective reproduction number (R): ",
+    "description": "The description for r in Indicators"
+  },
+  "digestComp.Indicators.posR": {
+    "message": "RT-PCR positivity rate: ",
+    "description": "The description for posR in Indicators"
+  },
+  "digestComp.Indicators.highVul": {
+    "message": "Number of departments in a highly vulnerable situation: {highVul}",
+    "description": "The line for highVul in Indicators"
+  },
+  "digestComp.Indicators.vacEhpadUsldPct": {
+    "message": "Proportion of residents in EHPAD/long-term care units having received at least one dose of vaccine: {pct}% (up to {dateDM})",
+    "description": "The line for vacEhpadUsldPct in Indicators"
+  },
+  "digestComp.Indicators.clusters": {
+    "message": "Number of clusters under investigation from 9/5/2020 up to {dateDM}: {clustersTotal}, including  {clustersEhpad} in EHPAD",
+    "description": "The line for clusters in Indicators"
+  },
+  "digestComp.ReturnHomeCumul.title": {
+    "message": "🏡 Hospital Discharges",
+    "description": "The heading of ReturnHomeCumul"
+  },
+  "digestComp.ReturnHomeCumul.returnHomeCumul": {
+    "message": "Total: ",
+    "description": "The description for returnHomeCumul in ReturnHomeCumul"
+  },
+  "digestComp.Hospi.title": {
+    "message": "🏥 Hospitalisations",
+    "description": "The heading of Hospi"
+  },
+  "digestComp.Hospi.hospi": {
+    "message": "Total: ",
+    "description": "The description for hospi in Hospi"
+  },
+  "digestComp.Hospi.hospiNew": {
+    "message": "In the last 24 hours: ",
+    "description": "The description for hospiNew in Hospi"
+  },
+  "digestComp.Hospi.hospiWeek": {
+    "message": "In the last week: ",
+    "description": "The description for hospiWeek in Hospi"
+  },
+  "digestComp.Hospi.hospiWeekVar": {
+    "message": " ({hospiWeekVar} compared with last week)",
+    "description": "The weekly variation of hospiWeek in Hospi, inside parentheses"
+  },
+  "digestComp.Icu.title": {
+    "message": "😞 ICU Admissions",
+    "description": "The heading of Icu"
+  },
+  "digestComp.Icu.icu": {
+    "message": "Total: ",
+    "description": "The description for icu in Icu"
+  },
+  "digestComp.Icu.icuNew": {
+    "message": "In the last 24 hours: ",
+    "description": "The description for icuNew in Icu"
+  },
+  "digestComp.Icu.icuWeek": {
+    "message": "In the last week: ",
+    "description": "The description for icuWeek in Icu"
+  },
+  "digestComp.Icu.icuWeekVar": {
+    "message": " ({icuWeekVar} compared with last week)",
+    "description": "The weekly variation of icuWeek in Icu, inside parentheses"
+  },
+  "digestComp.CasesCumul.title": {
+    "message": "🧫 Cumulative Confirmed Cases",
+    "description": "The heading of CasesCumul"
+  },
+  "digestComp.CasesCumul.casesCumul": {
+    "message": "Total: ",
+    "description": "The description for casesCumul in CasesCumul"
+  },
+  "digestComp.CasesCumul.casesEhpadEmsCumul": {
+    "message": "EHPAD/EMS: ",
+    "description": "The description for casesEhpadEmsCumul in CasesCumul"
+  },
+  "digestComp.CasesCumul.noUpdateEhpadEms": {
+    "message": " (no update)",
+    "description": "The no update hint for casesEhpadEmsCumul in CasesCumul, inside parentheses"
+  },
+  "digestComp.CasesCumul.casesRtPcr": {
+    "message": "New RT-PCR confirmed: ",
+    "description": "The description for casesRtPcr in CasesCumul"
+  },
+  "digestComp.CasesCumul.casesAntig": {
+    "message": "New antigen confirmed: ",
+    "description": "The description for casesAntig in CasesCumul"
+  },
+  "digestComp.DeathsCumul.title": {
+    "message": "☠️ Cumulative Deaths",
+    "description": "The heading of DeathsCumul"
+  },
+  "digestComp.DeathsCumul.deathsCumul": {
+    "message": "Total: ",
+    "description": "The description for deathsCumul in DeathsCumul"
+  },
+  "digestComp.DeathsCumul.deathsHospiCumul": {
+    "message": "Hospital: ",
+    "description": "The description for deathsHospiCumul in DeathsCumul"
+  },
+  "digestComp.DeathsCumul.deathsEhpadEmsCumul": {
+    "message": "EHPAD/EMS: ",
+    "description": "The description for deathsEhpadEmsCumul in DeathsCumul"
+  },
+  "digestComp.DeathsCumul.noUpdateEhpadEms": {
+    "message": " (no update)",
+    "description": "The no update hint for deathsEhpadEmsCumul in DeathsCumul, inside parentheses"
+  },
+  "digestComp.SourceFb.phrase": {
+    "message": "📝 以下內容整理於 {gt} 在臉書社團中的",
+    "description": "The starting phrase in SourceFb (used only in traditional and simplified Chinese)"
+  },
+  "digestComp.SourceFb.thisPost": {
+    "message": "此貼文",
+    "description": "'This post' (content of anchor tags in SourceFb, used only in traditional and simplified Chinese)"
+  },
+  "digestComp.SourceFb.linkTitle": {
+    "message": "前往臉書社團貼文",
+    "description": "The title of links 'this post' in SourceFb (used only in traditional and simplified Chinese)"
+  },
+  "homepage.title": {
+    "message": "Homepage"
+  },
+  "homepage.description": {
+    "message": "A website that presents daily COVID-19 statistics and news in France in the form of a daily digest"
+  },
+  "homepage.hero.title": {
+    "message": "COVID-19 IN FRANCE"
+  },
+  "homepage.hero.tagline": {
+    "message": "Daily Digest of <b>COVID-19</b> in France",
+    "description": "Homepage hero tagline, can contain simple html tags"
+  },
+  "homepage.hero.logoLink.title": {
+    "message": "Click me to read the latest digest directly"
+  },
+  "homepage.hero.button.learnMore": {
+    "message": "LEARN MORE"
+  },
+  "homepage.LatestOfficialData.title": {
+    "message": "French Official Statistics"
+  },
+  "homepage.LatestOfficialData.dateTitle": {
+    "message": "Date: "
+  },
+  "homepage.LatestOfficialData.dateFormat": {
+    "message": "d/M/y"
+  },
+  "homepage.LatestOfficialData.button.readTheLatestDigest": {
+    "message": "Read the latest digest"
+  },
+  "homepage.SomeCharts.title": {
+    "message": "Charts"
+  },
+  "homepage.SomeCharts.dateTitle": {
+    "message": "Last updated: {day}/{month}/{year}"
+  },
+  "homepage.SomeCharts.button.seeMoreCharts": {
+    "message": "See More Charts"
+  },
+  "homepage.features.officialStatistics.title": {
+    "message": "Official Statistics"
+  },
+  "homepage.features.officialStatistics.description": {
+    "message": "Provides daily COVID-19 statistics in France including confirmed cases, deaths, vaccinations, etc., as well as monitoring indicators such as effective reproduction number, RT-PCR positivity rate, ICU bed occupancy rate, etc."
+  },
+  "homepage.features.news.title": {
+    "message": "Daily News Highlights"
+  },
+  "homepage.features.news.description": {
+    "message": "Provides daily digests of Covid-19 news in France and links to news articles or videos (currently only available in traditional Chinese and simplified Chinese)"
+  },
+  "homepage.features.pressConference.title": {
+    "message": "Press Conference Summary"
+  },
+  "homepage.features.pressConference.description": {
+    "message": "Provides highlights of press conferences, summaries of presidential speeches, summaries of lockdown or curfew rules or any new policies and restrictions (currently only available in traditional Chinese and simplified Chinese)"
+  },
+  "homepage.features.button.startReading": {
+    "message": "Start Reading"
+  },
+  "digestComp.ChartCases.chartsPageLink": {
+    "message": "Charts",
+    "description": "The page name of Charts"
+  },
+  "digestComp.ChartCases.seeMoreCharts": {
+    "message": "See {chartsPageLink} for more data visualisations.",
+    "description": "The sentence for seeing more charts on the Charts page, `chartsPageLink` being the page link"
+  },
+  "chartsComp.Cases.label.total": {
+    "message": "Total cases"
+  },
+  "chartsCompo.Cases.label.new": {
+    "message": "New cases"
+  },
+  "chartsComp.CasesTrend.title": {
+    "message": "Confirmed cases - Trend over the last {duration} days",
+    "description": "Trend over the last <duration> days"
+  },
+  "chartsComp.Deaths.label.total": {
+    "message": "Total deaths"
+  },
+  "chartsCompo.Deaths.label.new": {
+    "message": "New deaths"
+  },
+  "chartsComp.DeathsTrend.title": {
+    "message": "Deaths - Trend over the last {duration} days",
+    "description": "Trend over the last <duration> days"
+  },
+  "chartsComp.IncidR.label": {
+    "message": "Incidence rate"
+  },
+  "chartsComp.IncidRTrend.title": {
+    "message": "Incidence rate - Trend over the last {duration} days",
+    "description": "Trend over the last <duration> days"
+  },
+  "chartsComp.IcuOccupR.label": {
+    "message": "ICU bed occupancy rate"
+  },
+  "chartsComp.IcuOccupRTrend.title": {
+    "message": "ICU bed occupancy rate - Trend over the last {duration} days",
+    "description": "Trend over the last <duration> days"
+  },
+  "chartsComp.PosR.label": {
+    "message": "RT-PCR positivity rate"
+  },
+  "chartsComp.PosRTrend.title": {
+    "message": "RT-PCR positivity rate - Trend over the last {duration} days",
+    "description": "Trend over the last <duration> days"
+  },
+  "chartsComp.R.label": {
+    "message": "Effective reproduction number"
+  },
+  "chartsComp.RTrend.title": {
+    "message": "Effective reproduction number - Trend over the last {duration} days",
+    "description": "Trend over the last <duration> days"
+  },
+  "chartsComp.Vac1And2.label.vac1": {
+    "message": "First doses"
+  },
+  "chartsCompo.Vac1And2.label.vac2": {
+    "message": "Second doses"
+  },
+  "chartsComp.Vac1And2Trend.title": {
+    "message": "Vaccinations - Trend over the last {duration} days",
+    "description": "Trend over the last <duration> days"
+  },
+  "chartsComp.Vac.label.total": {
+    "message": "Total"
+  },
+  "chartsCompo.Vac.label.new": {
+    "message": "New"
+  },
+  "chartsComp.VacTrend.title": {
+    "message": "Doses {dose} - Trend over the last {duration} days",
+    "description": "Doses <dose>. Trend over the last <duration> days"
+  },
+  "numFmt": {
+    "message": "en"
+  },
+  "dateFmt": {
+    "message": "d/m"
+  }
+}
