@@ -19,7 +19,7 @@ const features = [
     description: translate({
       id: "homepage.features.officialStatistics.description",
       message:
-        "Have they been telling you too how you should wait with buying a flat because the bubble will burst any time now? lol.",
+        "Have they been telling you too how you should wait with buying a flat because the bubble will burst any time now? lol. ANY TIME NOW.",
     }),
   },
   {
@@ -119,7 +119,7 @@ function LatestOfficalData() {
               minDate={new Date(2020, 3 - 1, 2)}
               maxDate={new Date(2021, m - 1, d)}
               clearIcon={null}
-              format={translate({ id: "homepage.LatestOfficialData.dateFormat", message: "y Year M Month d Day" })}
+              format={translate({ id: "homepage.LatestOfficialData.dateFormat", message: "y Year M month d DaY" })}
               calendarAriaLabel="Toggle calendar"
               dayAriaLabel="Day"
               monthAriaLabel="Month"
@@ -184,7 +184,7 @@ function SomeCharts() {
                 year,
               }}
             >
-              {"最後更新：{year} Year {month} Month {day} Day"}
+              {"Date: {year} Year {month} Month {day} Day"}
             </Translate>
           </h3>
         </div>
