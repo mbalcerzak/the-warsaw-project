@@ -14,17 +14,14 @@ import { IncidRTrend } from "@site/src/scripts/charts-components/IncidR";
 import { PosRTrend } from "@site/src/scripts/charts-components/PosR";
 import { RTrend } from "@site/src/scripts/charts-components/R";
 
-<h1 className="pages--h1">Charts</h1>
+import { PriceDistrictMonth } from "@site/src/scripts/charts-components/DistrPrice";
 
-<p className="subtitle">charts...</p>
+<h1 className="pages--h1">Warsaw districts' statistics</h1>
+<p className="subtitle">Check out price history for each district</p>
 
-<div className="comment--translc_gray">
-  🔄 最後更新日期：2021 年 {digestLatestDate2021.m} 月 {digestLatestDate2021.d} 日
-</div>
+## Price history per m<sup>2</sup> in Mokotów {#price-district-month}
 
-<em>
-  Sources<Link to="/digest/sources">Sources</Link>
-</em>
+<PriceDistrictMonth />
 
 ## confirmed-case {#confirmed-cases}
 
@@ -55,8 +52,3 @@ import { RTrend } from "@site/src/scripts/charts-components/R";
 <RTrend />
 
 <br />
-
-<div className="flex-center--wrap">
-  <DigestLinkButton linkType="latest" isButtonOutline={true} buttonText="返回最新一篇日誌" />
-  <DigestLinkButton linkType="random" isButtonOutline={false} buttonText="閱讀隨機一篇日誌" />
-</div>
