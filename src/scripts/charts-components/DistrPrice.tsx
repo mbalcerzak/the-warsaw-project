@@ -10,6 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Line } from "react-chartjs-2";
 import Translate, { translate } from "@docusaurus/Translate";
 import { officialData as od } from "../../data/data";
+import { flatsData } from "../../data/data";
 import { digestLatestDate2021ISO } from "../dateVariables";
 import { chartSettings } from "../chartSettings";
 import {
@@ -19,6 +20,97 @@ import {
   toLabelDateDM as lblDateDM,
 } from "../utils";
 
+const flat_areas = [
+  {
+    value: '20_or_less',
+    label: '20 metres or less',
+  },
+  {
+    value: '20_30',
+    label: '20 - 30 metres',
+  },
+  {
+    value: '30_40',
+    label: '30 - 40 metres',
+  },
+  {
+    value: '40_50',
+    label: '40 - 50 metres',
+  },
+  {
+    value: '50_60',
+    label: '50 - 60 metres',
+  },
+  {
+    value: '60_70',
+    label: '60 - 70 metres',
+  },
+  {
+    value: '70_80',
+    label: '70 - 80 metres',
+  },
+  {
+    value: '80_or_more',
+    label: 'more than 80 metres',
+  },
+];
+
+const districts = [
+  {value: 'Bemowo', label: 'Bemowo'},
+  {value: 'Białołęka', label: 'Białołęka'},
+  {value: 'Bielany', label: 'Bielany'},
+  {value: 'Mokotów', label: 'Mokotów'},
+  {value: 'Ochota', label: 'Ochota'},
+  {value: 'Praga Południe', label: 'Praga Południe'},
+  {value: 'Praga Północ', label: 'Praga Północ'},
+  {value: 'Rembertów', label: 'Rembertów'},
+  {value: 'Targówek', label: 'Targówek'},
+  {value: 'Ursus', label: 'Ursus'},
+  {value: 'Ursynów', label: 'Ursynów'},
+  {value: 'Wawer', label: 'Wawer'},
+  {value: 'Wesoła', label: 'Wesoła'},
+  {value: 'Wilanów', label: 'Wilanów'},
+  {value: 'Wola', label: 'Wola'},
+  {value: 'Włochy', label: 'Włochy'},
+  {value: 'Śródmieście', label: 'Śródmieście'},
+  {value: 'Żoliborz', label: 'Żoliborz'},
+]
+
+
+// { FLATS DATA
+//   "location": "Bemowo",
+//   "area_category": "20_30",
+//   "month_num": "2021-01",
+//   "avg_price_per_m": 11601,
+//   "num_flats": 2,
+//   "month": "January2021"
+// },
+
+// COVID DATA
+// "casesCumul": 74390,
+// "deathsCumul": 8911,
+// "hospi": 29722,
+// "hospiNew": 2754,
+// "icu": 7072,
+// "icuNew": 478,
+// "returnHomeCumul": 17250,
+// "deathsHospiCumul": 6494,
+// "deathsEhpadEmsCumul": 2417,
+// "incidR": 47.5354007815524,
+// "icuOccupR": 137.4
+
+export const flats = flatsData;
+
+interface FlatStats {
+  location: string,
+  area_category: string,
+  month_num: string,
+  avg_price_per_m: number,
+  num_flats: number,
+  month: string
+}
+
+
 const maxDur: number = 480;
 const datesInMaxDur: string[] = arrD(digestLatestDate2021ISO, maxDur);
 const dataInMaxDur = {
@@ -26,22 +118,27 @@ const dataInMaxDur = {
   new: datesInMaxDur.map((d) => od[d]?.casesCumul - od[tdb(d)]?.casesCumul),
 };
 
+console.log(flats)
+
+// const dataInMaxDur = {
+//   cumul: flats.avg_price_per_m,
+//   new: flats.num_flats,
+// };
+
 const allDur = [15, 90, 180, 270, 360, 480]; // last one = maxDur
 const marks = allDur.map((x) => {
   return { value: x, label: x };
 });
 
+const Cases = ({ flatArea, district}) => {
+  const duration = 15
+  const dateFmt = "d/m"
 
-
-
-
-const Cases = ({ duration, dateFmt }) => {
   const dates: string[] = datesInMaxDur.slice(maxDur - duration);
 
   // data
   const dataCasesCumul = dataInMaxDur.cumul.slice(maxDur - duration);
   const dataCasesNew = dataInMaxDur.new.slice(maxDur - duration);
-
   const data = {
     labels: dateFmt == "d/m" ? dates.map(lblDateDM) : dates.map(lblDateMD),
     datasets: [
@@ -100,47 +197,61 @@ const Cases = ({ duration, dateFmt }) => {
 
 export const PriceDistrictMonth = () => {
   const dateFmt = translate({ id: "dateFmt", message: "m/d" });
-  const defaultValue = allDur[0];
-  const [duration, setDuration] = useState(defaultValue);
+  const [flatArea, setFlatArea] = React.useState('40_50');
+  const [district, setDistrict] = React.useState('Ochota');
+
+  const handleChange = (event) => {
+    setFlatArea(event.target.value);
+  };
+
+  const chooseDistrict = (event) => {
+    setDistrict(event.target.value)
+  }
 
   return (
     <>
       <div className="chart-title">
         <Translate
           id="chartsComp.PriceDistrictMonth.title"
-          description="Trend over the last <duration> days"
-          values={{ duration: duration }}
+          description="Historical prices for a flat of size: <flatArea>"
+          values={{ flatArea: flatArea, district: district }}
         >
-          {"Flat size in square metres: {duration} "}
+          {"Historical prices for {flatArea} m2 flats in {district}"}
         </Translate>
       </div>
-      {/* <Slider
-        defaultValue={defaultValue}
-        aria-labelledby="discrete-slider-restrict"
-        valueLabelDisplay="off"
-        step={15}
-        marks={marks}
-        max={maxDur}
-        min={allDur[0]}
-        onChange={(e, v) => {
-          if (typeof v == "number") setDuration(v);
-        }}
-      /> */}
-        <FormControl variant="filled">
-          <InputLabel htmlFor="filled-age-simple">Age</InputLabel>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Size of the apartment</InputLabel>
           <Select
-            value={defaultValue}
-            onChange={(e, v) => {
-              if (typeof v == "number") setDuration(v);
-            }}
-            input={<FilledInput name="age" id="filled-age-simple" />}
+            variant="filled"
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            onChange={handleChange}
+            value={flatArea}
           >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+          {flat_areas.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
           </Select>
         </FormControl>
-      <Cases duration={duration} dateFmt={dateFmt} />
+        <FormControl fullWidth>
+          <InputLabel id="input-label-districr">District</InputLabel>
+          <Select
+            variant="filled"
+            labelId="districts"
+            id="districts"
+            onChange={chooseDistrict}
+            value={district}
+          >
+          {districts.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+          </Select>
+        </FormControl>
+      <Cases flatArea={flatArea} district={district}/>
     </>
   );
 };

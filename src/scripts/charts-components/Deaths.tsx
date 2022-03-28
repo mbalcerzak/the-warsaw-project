@@ -38,7 +38,7 @@ const Deaths = ({ duration, dateFmt }) => {
         ...chartSettings.lineStyle.blue,
         label: translate({
           id: "chartsComp.Deaths.label.total",
-          message: "總累計",
+          message: "Deaths total",
         }),
         data: dataDeathsCumul,
         fill: false,
@@ -49,7 +49,7 @@ const Deaths = ({ duration, dateFmt }) => {
         type: "bar",
         label: translate({
           id: "chartsCompo.Deaths.label.new",
-          message: "當日死亡數",
+          message: "Deaths (new)",
         }),
         data: dataDeathsNew,
         yAxisID: "y-axis-var",
@@ -100,7 +100,7 @@ export const DeathsTrend = () => {
           description="Trend over the last <duration> days"
           values={{ duration: duration }}
         >
-          {"死亡數近 {duration} 日走勢"}
+          {"Duration {duration}"}
         </Translate>
       </div>
       <Slider

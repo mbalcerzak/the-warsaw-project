@@ -3,52 +3,12 @@ title: Charts
 description: Some charts
 ---
 
-import { digestLatestDate2021 } from "@site/src/scripts/dateVariables";
 import Link from "@docusaurus/Link";
-import { DigestLinkButton } from "@site/src/scripts/components/DigestLinkButton";
-import { CasesTrend } from "@site/src/scripts/charts-components/Cases";
-import { DeathsTrend } from "@site/src/scripts/charts-components/Deaths";
-import { VacDashboard } from "@site/src/scripts/charts-components/Vac";
-import { IcuOccupRTrend } from "@site/src/scripts/charts-components/IcuOccupR";
-import { IncidRTrend } from "@site/src/scripts/charts-components/IncidR";
-import { PosRTrend } from "@site/src/scripts/charts-components/PosR";
-import { RTrend } from "@site/src/scripts/charts-components/R";
-
 import { PriceDistrictMonth } from "@site/src/scripts/charts-components/DistrPrice";
 
-<h1 className="pages--h1">Warsaw districts' statistics</h1>
+<h1 className="pages--h1">Warsaw statistics</h1>
 <p className="subtitle">Check out price history for each district</p>
 
-## Price history per m<sup>2</sup> in Mokotów {#price-district-month}
+## Price history (PLN per m<sup>2)</sup> {#price-district-month}
 
 <PriceDistrictMonth />
-
-## confirmed-case {#confirmed-cases}
-
-<CasesTrend />
-
-## deaths {#deaths}
-
-<DeathsTrend />
-
-## vaccinations {#vaccinations}
-
-<VacDashboard />
-
-## cu-bed-occupancy-rate {#icu-bed-occupancy-rate}
-
-<IcuOccupRTrend />
-
-## incidence-rate {#incidence-rate}
-
-<IncidRTrend />
-
-## RT-PCR Positivity Rate {#positivity-rate}
-
-<PosRTrend />
-
-## Effective Reproduction number (R) {#effective-reproduction-number}
-
-<RTrend />
-
-<br />

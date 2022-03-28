@@ -14,8 +14,8 @@ module.exports = {
   organizationName: "MAB Data",
   projectName: "mabdata",
   i18n: {
-    defaultLocale: "zh-Hant",
-    locales: ["zh-Hant", "zh-Hans", "en", "pl"],
+    defaultLocale: "en",
+    locales: ["en", "pl"],
     localeConfigs: {
       en: { label: "English" },
       pl: { label: "Polski" },
@@ -69,15 +69,11 @@ module.exports = {
           label: "about",
           position: "right",
         },
-        {
-          type: "localeDropdown",
-          position: "right",
-        },
         { 
           type: "doc",
           docId: "about", 
           label: "methodology", 
-          position: "left", 
+          position: "right", 
         },
       ],
     },
