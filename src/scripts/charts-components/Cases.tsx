@@ -38,7 +38,7 @@ const Cases = ({ duration, dateFmt }) => {
         ...chartSettings.lineStyle.blue,
         label: translate({
           id: "chartsComp.Cases.label.total",
-          message: "總累計",
+          message: "Total Cases",
         }),
         data: dataCasesCumul,
         fill: false,
@@ -49,7 +49,7 @@ const Cases = ({ duration, dateFmt }) => {
         type: "bar",
         label: translate({
           id: "chartsCompo.Cases.label.new",
-          message: "當日確診數",
+          message: "New cases",
         }),
         data: dataCasesNew,
         yAxisID: "y-axis-var",
@@ -100,7 +100,7 @@ export const CasesTrend = () => {
           description="Trend over the last <duration> days"
           values={{ duration: duration }}
         >
-          {"確診數近 {duration} 日走勢"}
+          {"Duration {duration}"}
         </Translate>
       </div>
       <Slider

@@ -37,44 +37,21 @@ const CasesCumul = ({ date, numFmt }) => {
     <div>
       <h3>
         <Translate id="digestComp.CasesCumul.title" description="The heading of CasesCumul">
-          🧫 累積確診數
+          🧫 Cases
         </Translate>
       </h3>
       <ul>
         <li>
           <Translate id="digestComp.CasesCumul.casesCumul" description="The description for casesCumul in CasesCumul">
-            總累計：
+            Number of cases：
           </Translate>
           {bn(casesCumul, numFmt)}
           {isNum(casesCumulTdb) ? <em> ({bnws(casesCumul - casesCumulTdb, numFmt)})</em> : null}
         </li>
-        {isNum(casesEhpadEmsCumul) ? (
-          <li>
-            <Translate
-              id="digestComp.CasesCumul.casesEhpadEmsCumul"
-              description="The description for casesEhpadEmsCumul in CasesCumul"
-            >
-              養老院/護理院：
-            </Translate>
-            {bn(casesEhpadEmsCumul, numFmt)}
-            {!isNum(casesEhpadEmsCumulTdb) ? null : casesEhpadEmsCumul - casesEhpadEmsCumulTdb ? (
-              <em> ({bnws(casesEhpadEmsCumul - casesEhpadEmsCumulTdb, numFmt)})</em>
-            ) : (
-              <em>
-                <Translate
-                  id="digestComp.CasesCumul.noUpdateEhpadEms"
-                  description="The no update hint for casesEhpadEmsCumul in CasesCumul, inside parentheses"
-                >
-                  （未更新）
-                </Translate>
-              </em>
-            )}
-          </li>
-        ) : null}
         {isNum(casesRtPcr) ? (
           <li>
             <Translate id="digestComp.CasesCumul.casesRtPcr" description="The description for casesRtPcr in CasesCumul">
-              新增 RT-PCR 確診：
+              Cases RT-PCR：
             </Translate>
             {bn(casesRtPcr, numFmt)}
           </li>
@@ -82,7 +59,7 @@ const CasesCumul = ({ date, numFmt }) => {
         {isNum(casesAntig) ? (
           <li>
             <Translate id="digestComp.CasesCumul.casesAntig" description="The description for casesAntig in CasesCumul">
-              新增抗原檢測確診：
+              Cases antigen test
             </Translate>
             {bn(casesAntig, numFmt)}
           </li>
@@ -108,7 +85,7 @@ const DeathsCumul = ({ date, numFmt }) => {
     <div>
       <h3>
         <Translate id="digestComp.DeathsCumul.title" description="The heading of DeathsCumul">
-          ☠️ 累積死亡數
+          ☠️ Deaths
         </Translate>
       </h3>
       <ul>
@@ -118,7 +95,7 @@ const DeathsCumul = ({ date, numFmt }) => {
               id="digestComp.DeathsCumul.deathsCumul"
               description="The description for deathsCumul in DeathsCumul"
             >
-              總累計：
+              Number of deaths
             </Translate>
             {bn(deathsCumul, numFmt)}
             {isNum(deathsCumulTdb) ? <em> ({bnws(deathsCumul - deathsCumulTdb, numFmt)})</em> : null}
@@ -129,34 +106,11 @@ const DeathsCumul = ({ date, numFmt }) => {
             id="digestComp.DeathsCumul.deathsHospiCumul"
             description="The description for deathsHospiCumul in DeathsCumul"
           >
-            醫院：
+            Death cummulative:
           </Translate>
           {bn(deathsHospiCumul, numFmt)}
           {isNum(deathsHospiCumulTdb) ? <em> ({bnws(deathsHospiCumul - deathsHospiCumulTdb, numFmt)})</em> : null}
         </li>
-        {isNum(deathsEhpadEmsCumul) ? (
-          <li>
-            <Translate
-              id="digestComp.DeathsCumul.deathsEhpadEmsCumul"
-              description="The description for deathsEhpadEmsCumul in DeathsCumul"
-            >
-              養老院/護理院：
-            </Translate>
-            {bn(deathsEhpadEmsCumul, numFmt)}
-            {!isNum(deathsEhpadEmsCumulTdb) ? null : deathsEhpadEmsCumul - deathsEhpadEmsCumulTdb ? (
-              <em> ({bnws(deathsEhpadEmsCumul - deathsEhpadEmsCumulTdb, numFmt)})</em>
-            ) : (
-              <em>
-                <Translate
-                  id="digestComp.DeathsCumul.noUpdateEhpadEms"
-                  description="The no update hint for deathsEhpadEmsCumul in DeathsCumul, inside parentheses"
-                >
-                  （未更新）
-                </Translate>
-              </em>
-            )}
-          </li>
-        ) : null}
       </ul>
     </div>
   );
@@ -178,13 +132,13 @@ const Hospi = ({ date, numFmt }) => {
     <div>
       <h3>
         <Translate id="digestComp.Hospi.title" description="The heading of Hospi">
-          🏥 住院數
+          🏥 Hospitalisations
         </Translate>
       </h3>
       <ul>
         <li>
           <Translate id="digestComp.Hospi.hospi" description="The description for hospi in Hospi">
-            當前：
+            Number:
           </Translate>
           {bn(hospi, numFmt)}
           {isNum(hospiTdb) ? <em> ({bnws(hospi - hospiTdb, numFmt)})</em> : null}
@@ -192,7 +146,7 @@ const Hospi = ({ date, numFmt }) => {
         {isNum(hospiNew) ? (
           <li>
             <Translate id="digestComp.Hospi.hospiNew" description="The description for hospiNew in Hospi">
-              本日入院：
+              New cases：
             </Translate>
             {bn(hospiNew, numFmt)}
             {isNum(hospiNewTdb) ? <em> ({bnws(hospiNew - hospiNewTdb, numFmt)})</em> : null}
@@ -201,7 +155,7 @@ const Hospi = ({ date, numFmt }) => {
         {isNum(hospiWeek) ? (
           <li>
             <Translate id="digestComp.Hospi.hospiWeek" description="The description for hospiWeek in Hospi">
-              過去七日入院：
+              This week：
             </Translate>
             {bn(hospiWeek, numFmt)}
             {isNum(hospiWeekWb) ? (
@@ -211,7 +165,7 @@ const Hospi = ({ date, numFmt }) => {
                   description="The weekly variation of hospiWeek in Hospi, inside parentheses"
                   values={{ hospiWeekVar: bnws(hospiWeek - hospiWeekWb, numFmt) }}
                 >
-                  {"（與七日前數據相比 {hospiWeekVar}）"}
+                  {"（Documented cases {hospiWeekVar}）"}
                 </Translate>
               </em>
             ) : null}
@@ -238,13 +192,13 @@ const Icu = ({ date, numFmt }) => {
     <div>
       <h3>
         <Translate id="digestComp.Icu.title" description="The heading of Icu">
-          😞 重症數
+          😞 ICU
         </Translate>
       </h3>
       <ul>
         <li>
           <Translate id="digestComp.Icu.icu" description="The description for icu in Icu">
-            當前：
+            Number:
           </Translate>
           {bn(icu, numFmt)}
           {isNum(icuTdb) ? <em> ({bnws(icu - icuTdb, numFmt)})</em> : null}
@@ -252,7 +206,7 @@ const Icu = ({ date, numFmt }) => {
         {isNum(icuNew) ? (
           <li>
             <Translate id="digestComp.Icu.icuNew" description="The description for icuNew in Icu">
-              本日重症：
+              New cases：
             </Translate>
             {bn(icuNew, numFmt)}
             {isNum(icuNewTdb) ? <em> ({bnws(icuNew - icuNewTdb, numFmt)})</em> : null}
@@ -261,7 +215,7 @@ const Icu = ({ date, numFmt }) => {
         {isNum(icuWeek) ? (
           <li>
             <Translate id="digestComp.Icu.icuWeek" description="The description for icuWeek in Icu">
-              過去七日重症：
+              New cases this week：
             </Translate>
             {bn(icuWeek, numFmt)}
             {isNum(icuWeekWb) ? (
@@ -271,7 +225,7 @@ const Icu = ({ date, numFmt }) => {
                   description="The weekly variation of icuWeek in Icu, inside parentheses"
                   values={{ icuWeekVar: bnws(icuWeek - icuWeekWb, numFmt) }}
                 >
-                  {"（與七日前數據相比 {icuWeekVar}）"}
+                  {"（ICU cases that week {icuWeekVar}）"}
                 </Translate>
               </em>
             ) : null}
@@ -294,7 +248,7 @@ const ReturnHomeCumul = ({ date, numFmt }) => {
     <div>
       <h3>
         <Translate id="digestComp.ReturnHomeCumul.title" description="The heading of ReturnHomeCumul">
-          🏡 累積出院數
+          🏡 Return home
         </Translate>
       </h3>
       <ul>
@@ -303,7 +257,7 @@ const ReturnHomeCumul = ({ date, numFmt }) => {
             id="digestComp.ReturnHomeCumul.returnHomeCumul"
             description="The description for returnHomeCumul in ReturnHomeCumul"
           >
-            總累計：
+            Number:
           </Translate>
           {bn(returnHomeCumul, numFmt)}
           {isNum(returnHomeCumultdb) ? <em> ({bnws(returnHomeCumul - returnHomeCumultdb, numFmt)})</em> : null}
@@ -327,13 +281,13 @@ const VacCumul = ({ date, numFmt }) => {
     <div>
       <h3>
         <Translate id="digestComp.VacCumul.title" description="The heading of VacCumul">
-          💉 疫苗接種數
+          💉 Vaccinations
         </Translate>
       </h3>
       <ul>
         <li>
           <Translate id="digestComp.VacCumul.vac1" description="The description for vac1 in VacCumul">
-            第 1 劑接種累計：
+            1st dose：
           </Translate>
           {bn(vac1, numFmt)}
           {isNum(vac1Tdb) ? <em> ({bnws(vac1 - vac1Tdb, numFmt)})</em> : null}
@@ -341,7 +295,7 @@ const VacCumul = ({ date, numFmt }) => {
         {isNum(vac2) ? (
           <li>
             <Translate id="digestComp.VacCumul.vac2" description="The description for vac2 in VacCumul">
-              第 2 劑接種累計：
+              2nd dose：
             </Translate>
             {bn(vac2, numFmt)}
             {isNum(vac2Tdb) ? <em> ({bnws(vac2 - vac2Tdb, numFmt)})</em> : null}
@@ -371,28 +325,28 @@ const Indicators = ({ date, numFmt }) => {
     <div>
       <h3>
         <Translate id="digestComp.Indicators.title" description="The heading of Indicators">
-          📊 各項指標數據
+          📊 Indicators
         </Translate>
       </h3>
       <ul>
         {isNum(incidR) ? (
           <li>
             <Translate id="digestComp.Indicators.incidR" description="The description for incidR in Indicators">
-              法國每 10 萬人確診數：
+              R incidents：
             </Translate>
             {bn(incidR, numFmt)}
           </li>
         ) : null}
         <li>
           <Translate id="digestComp.Indicators.icuOccupR" description="The description for icuOccupR in Indicators">
-            重症病房佔有率：
+            ICU Occupancy:
           </Translate>
           {bn(icuOccupR, numFmt)}%
         </li>
         {isNum(r) ? (
           <li>
             <Translate id="digestComp.Indicators.r" description="The description for r in Indicators">
-              有效傳染數 (R)：
+              Indicator (R)：
             </Translate>
             {bn(r, numFmt)}
           </li>
@@ -400,7 +354,7 @@ const Indicators = ({ date, numFmt }) => {
         {isNum(posR) ? (
           <li>
             <Translate id="digestComp.Indicators.posR" description="The description for posR in Indicators">
-              RT-PCR 陽性確診率：
+              RT-PCR tests
             </Translate>
             {bn(posR, numFmt)}%
           </li>
@@ -412,7 +366,7 @@ const Indicators = ({ date, numFmt }) => {
               description="The line for highVul in Indicators"
               values={{ highVul: highVul }}
             >
-              {"疫情列為高度脆弱地區：共 {highVul} 區"}
+              {"Highly vulnerable: {highVul}"}
             </Translate>
           </li>
         ) : null}
@@ -427,7 +381,7 @@ const Indicators = ({ date, numFmt }) => {
                 dateDM: revMD(vacEhpadUsldPct[1]),
               }}
             >
-              {"養老院/長照機構接種至少 1 劑疫苗比例：{pct}%（截至 {dateMD}）"}
+              {"Percent vaccinated：{pct}%（{dateMD}）"}
             </Translate>
           </li>
         ) : null}
@@ -444,7 +398,7 @@ const Indicators = ({ date, numFmt }) => {
               }}
             >
               {
-                "2020 年 5/9 起（或第一次解封後）至 {dateMD} 群聚感染情況：尚在調查中的有 {clustersTotal} 起，其中包含養老院 {clustersEhpad} 起"
+                "2020 {dateMD} : {clustersTotal} {clustersEhpad} "
               }
             </Translate>
           </li>
@@ -479,7 +433,7 @@ export const Subtitle = ({ date }) => {
           n: n,
         }}
       >
-        {"{y} 年 {m} 月 {d} 日法國新冠肺炎疫情匯報。日誌第 {n} 篇。"}
+        {"{y}  {m}  {d} . {n} "}
       </Translate>
     </p>
   );
@@ -511,7 +465,7 @@ export const Figure = ({ date, srcx, children }) => {
     : translate(
         {
           id: "digestComp.Figure.defaultCaption",
-          message: "{y} 年 {m} 月 {d} 日法國新冠肺炎疫情匯報",
+          message: "{y}  {m}  {d} ",
           description: "The default image caption in Figure",
         },
         { y: yyyy, m: mm.replace(/^0/, ""), d: dd.replace(/^0/, ""), month_en: month_en, month_fr: month_fr }
@@ -564,7 +518,7 @@ export const ChartCases = ({ date }) => {
         ...chartSettings.lineStyle.blue,
         label: translate({
           id: "digestComp.ChartCases.label.total",
-          message: "總累計",
+          message: "Total cases",
           description: "The label for total cases in ChartCases",
         }),
         data: dataCasesCumul,
@@ -576,7 +530,7 @@ export const ChartCases = ({ date }) => {
         type: "bar",
         label: translate({
           id: "digestComp.ChartCases.label.new",
-          message: "當日確診數",
+          message: "New cases",
           description: "The label for new cases in ChartCases",
         }),
         data: dataCasesCumul.map((x, i, arr) => (i > 0 ? x - arr[i - 1] : x - od[tdb(date, duration)]?.[dataName])),
@@ -618,7 +572,7 @@ export const ChartCases = ({ date }) => {
     <>
       <div className="chart-title">
         <Translate id="digestComp.ChartCases.title" description="The title of ChartCases">
-          確診數近兩週走勢
+          New Cases
         </Translate>
       </div>
       <Line data={data} options={options} />
