@@ -119,7 +119,9 @@ const dataInMaxDur = {
   cumul: datesInMaxDur.map((d) => od[d]?.casesCumul),
   new: datesInMaxDur.map((d) => od[d]?.casesCumul - od[tdb(d)]?.casesCumul),
 };
-
+console.log(datesInMaxDur)
+console.log(od)
+console.log(dataInMaxDur)
 console.log(flats)
 
 
@@ -129,10 +131,13 @@ function filterByString(data, distr, area) {
 
 console.log(filterByString(flats, "Bemowo", "20_30"));
 
+const indexes_flats: string[] = flats.keys();
 
 const flatsDur = {
-  cumul: flats.avg_price_per_m,
-  new: flats.num_flats,
+  cumul: indexes_flats.map((d) => flats[d]?.avg_price_per_m),
+  new: indexes_flats.map((d) => flats[d]?.num_flats),
+  // cumul: flats.avg_price_per_m,
+  // new: flats.num_flats,
 };
 
 console.log(flatsDur)
