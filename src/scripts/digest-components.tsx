@@ -4,7 +4,7 @@ import { chartSettings } from "./chartSettings";
 import Translate, { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { fbPostsLinks as fbLinks, officialData as od } from "../data/data";
+import { officialData as od } from "../data/data";
 import { newsEarliestDateISO } from "./dateVariables";
 import {
   beautifyNumber as bn,
@@ -506,7 +506,7 @@ export const ChartCases = ({ date }) => {
   const chartsPageLink = (
     <Link to="/charts">
       <Translate id="digestComp.ChartCases.chartsPageLink" description="The page name of Charts">
-        數據圖表
+        Charts
       </Translate>
     </Link>
   );

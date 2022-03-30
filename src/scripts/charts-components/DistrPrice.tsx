@@ -110,6 +110,8 @@ interface FlatStats {
   month: string
 }
 
+// const flat_parsed: FlatStats = JSON.parse(flats)
+// console.log(flat_parsed)
 
 const maxDur: number = 480;
 const datesInMaxDur: string[] = arrD(digestLatestDate2021ISO, maxDur);
@@ -120,17 +122,28 @@ const dataInMaxDur = {
 
 console.log(flats)
 
-// const dataInMaxDur = {
-//   cumul: flats.avg_price_per_m,
-//   new: flats.num_flats,
-// };
+
+function filterByString(data, distr, area) {
+  return data.filter(e => e.location.includes(distr) && e.area_category.includes(area));
+}
+
+console.log(filterByString(flats, "Bemowo", "20_30"));
+
+
+const flatsDur = {
+  cumul: flats.avg_price_per_m,
+  new: flats.num_flats,
+};
+
+console.log(flatsDur)
+
 
 const allDur = [15, 90, 180, 270, 360, 480]; // last one = maxDur
 const marks = allDur.map((x) => {
   return { value: x, label: x };
 });
 
-const Cases = ({ flatArea, district}) => {
+const Cases = ({ flatArea, district }) => {
   const duration = 15
   const dateFmt = "d/m"
 
