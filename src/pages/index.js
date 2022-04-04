@@ -60,7 +60,6 @@ function Banner() {
     <header className={clsx("hero", styles.heroBanner)}>
       <div className="container">
         <Link
-          to={`/digest/2021/${monthEnLower(digestLatestDate2021.m)}/${digestLatestDate2021.d}`}
           title={translate({ id: "homepage.hero.logoLink.title", message: "logoLink Title" })}
         >
           <img className={styles.heroLogo} src={useBaseUrl("/img/city_girl.svg")} alt="Website Logo" />
@@ -82,7 +81,7 @@ function Banner() {
           <div className={styles.buttons}>
             <Link
               className={clsx("button button--outline button--primary button--lg", styles.btnCta)}
-              to={useBaseUrl("digest")}
+              to={useBaseUrl("docs/about")}
             >
               <Translate id="homepage.hero.button.learnMore">Learn More</Translate>
             </Link>
@@ -97,7 +96,7 @@ function LatestOfficalData() {
   const d = digestLatestDate2021.d;
   const m = digestLatestDate2021.m;
   const y = 2021;
-  const linkToLatestDigest = `/digest/${y}/${monthEnLower(m)}/${d}`;
+  const linkToLatestDigest = `/docs/${y}/${monthEnLower(m)}/${d}`;
   const [selectedDate, onChange] = useState(new Date(2021, m - 1, d));
 
   const toISO = (v) =>
@@ -154,7 +153,7 @@ function Features() {
       <div className="flex-center--wrap margin-vert--md">
         <Link
           className={clsx("button button--outline button--primary button--lg", styles.btnCta)}
-          to={useBaseUrl("digest")}
+          to={useBaseUrl("charts")}
         >
           <Translate id="homepage.features.button.startReading">Learn More!</Translate>
         </Link>
@@ -173,20 +172,8 @@ function SomeCharts() {
       <div className="container">
         <div className="text--center margin-top--lg">
           <h1>
-            <Translate id="homepage.SomeCharts.title">Some Charts</Translate>
+            <Translate id="homepage.SomeCharts.title">Overall statistics</Translate>
           </h1>
-          <h3>
-            <Translate
-              id="homepage.SomeCharts.dateTitle"
-              values={{
-                day,
-                month,
-                year,
-              }}
-            >
-              {"Date: {year} Year {month} Month {day} Day"}
-            </Translate>
-          </h3>
         </div>
         <div className="row">
           <div className="col col--6 padding--lg">

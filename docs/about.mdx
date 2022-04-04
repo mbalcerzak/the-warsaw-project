@@ -4,44 +4,63 @@ description: How I built it
 hide_table_of_contents: false
 sidebar_position: 0
 tags: [data, python]
+autoCollapseSidebarCategories: false
 ---
 
 import Link from "@docusaurus/Link";
-
-## This website
----
-
-#### Built with
-- [Docusaurus]('')
-- JavaScript
-- Typescript
-- React
-
-#### Deployed on 
-- Neflity
 
 
 ## Business problem
 ---
 
-The aim of this project is to build a model that predicts apartment prices and 
-detect anomalies in the data (overpriced or undervalued positions).
+The aim of this project is to build a model that would help me 
+identify a good investment opportunity (overpriced or undervalued apartment in Warsaw). 
+The model would predict a price given the data and indicate whether the actual price 
+is too high or too low. 
 
-## Scraper
+## [Gathering the data](/Data/1_data_scraping.md)
 ---
 
 #### Built with:
-- [Python]('')
-- [Scrapy]('')
+- [Python 3.9]('https://www.python.org/')
+- [Scrapy]('https://scrapy.org/')
 
-#### Running:
-- on [Raspberry Pi]('')🍓 on my fridge 🤫
-- using [Cron]('')
+#### Database:
+- [SQLite]('https://www.sqlite.org/index.html')
+
+#### Output API:
+- [JSON]('https://github.com/mbalcerzak/warsaw_flats_api/tree/raspberry-updates/json_dir')
+
+#### Scraper:
+- on [Raspberry Pi]('https://www.raspberrypi.org/')🍓 on my fridge 🤫
+- using [Cron]('https://crontab.guru/')
+- from [gumtree.com](https://www.gumtree.pl/s-mieszkania-i-domy-sprzedam-i-kupie/warszawa/v1c9073l3200008p1)
+
+#### Price changes
+Apart from the ads I am also looking out for price changes. Some owners changed the price of the ad more 
+than 5 times within 2 months period. I am curious to see if that additional information can be used in 
+some way or if there is a way to predict whether the price of the apartment will change.
+
+
+## Basic statistics
+---
+The average price for every month per every district of Warsaw and apartment "category size" is calulated and output as REST API.
+Data is (was) updated daily. The last update was performed in February 2022 due to no new advertisements being 
+published on gumtree after the Ukraine War started.
+
+Aggregated statistics include:
+- average price per square metre durign each month, per district per size category
+- daily number of posted advertisements
+- daily number of scraper advertisements
+- number of price changes on a given day 
 
 
 ## Model building
 ---
-
+- [Python 3.9]('https://www.python.org/')
+- demo and exploration: [Jupyter Notebook]('https://jupyter.org/)
+- [scikit-learn](https://scikit-learn.org/stable/)
+- [PyTorch](https://pytorch.org/)
 
 
 ## Pipeline
@@ -52,3 +71,14 @@ detect anomalies in the data (overpriced or undervalued positions).
 ---
 
 
+## This website
+---
+
+#### Built with
+- [Docusaurus]('https://docusaurus.io/')
+- JavaScript
+- Typescript
+- React
+
+#### Deployed on 
+- Neflity
