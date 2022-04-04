@@ -66,14 +66,14 @@ module.exports = {
         },
         {
           to: "about",
-          label: "about",
+          label: "author",
           position: "right",
         },
         { 
           type: "doc",
           docId: "about", 
-          label: "methodology", 
-          position: "right", 
+          label: "docs", 
+          position: "left", 
         },
       ],
     },
