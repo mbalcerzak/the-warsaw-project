@@ -7,62 +7,8 @@ import { Line } from "react-chartjs-2";
 import { translate } from "@docusaurus/Translate";
 import { chartSettings } from "../chartSettings";
 import axios from "axios";
+import { districts, flat_areas } from "../../data/data";
 
-const flat_areas = [
-  {
-    value: '20_or_less',
-    label: '20 metres or less',
-  },
-  {
-    value: '20_30',
-    label: '20 - 30 metres',
-  },
-  {
-    value: '30_40',
-    label: '30 - 40 metres',
-  },
-  {
-    value: '40_50',
-    label: '40 - 50 metres',
-  },
-  {
-    value: '50_60',
-    label: '50 - 60 metres',
-  },
-  {
-    value: '60_70',
-    label: '60 - 70 metres',
-  },
-  {
-    value: '70_80',
-    label: '70 - 80 metres',
-  },
-  {
-    value: '80_or_more',
-    label: 'more than 80 metres',
-  },
-];
-
-const districts = [
-  {value: 'Bemowo', label: 'Bemowo'},
-  {value: 'Białołęka', label: 'Białołęka'},
-  {value: 'Bielany', label: 'Bielany'},
-  {value: 'Mokotów', label: 'Mokotów'},
-  {value: 'Ochota', label: 'Ochota'},
-  {value: 'Praga Południe', label: 'Praga Południe'},
-  {value: 'Praga Północ', label: 'Praga Północ'},
-  {value: 'Rembertów', label: 'Rembertów'},
-  {value: 'Targówek', label: 'Targówek'},
-  {value: 'Ursus', label: 'Ursus'},
-  {value: 'Ursynów', label: 'Ursynów'},
-  {value: 'Wawer', label: 'Wawer'},
-  {value: 'Wesoła', label: 'Wesoła'},
-  {value: 'Wilanów', label: 'Wilanów'},
-  {value: 'Wola', label: 'Wola'},
-  {value: 'Włochy', label: 'Włochy'},
-  {value: 'Śródmieście', label: 'Śródmieście'},
-  {value: 'Żoliborz', label: 'Żoliborz'},
-]
 
 const Cases = ({ flatArea, district}) => {
   //to jest taki maly trick zeby wyciagnac tylko pojedyncze miesiace z calego zbioru z danych
