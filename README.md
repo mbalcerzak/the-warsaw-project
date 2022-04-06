@@ -54,4 +54,4 @@ yarn serve
 
 ## NVM, Node.js
 
-[installing nvm]('https://tecadmin.net/install-nvm-macos-with-homebrew/')
+[installing nvm](https://tecadmin.net/install-nvm-macos-with-homebrew/)

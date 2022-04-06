@@ -8,7 +8,7 @@ module.exports = {
   tagline: "Tagline",
   url: "http://mabdata.com",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
   organizationName: "MAB Data",
@@ -27,9 +27,6 @@ module.exports = {
     colorMode: {
       defaultMode: "light",
       respectPrefersColorScheme: true,
-      switchConfig: {
-        darkIcon: "🌙",
-      },
     },
     // announcementBar: {
     //   id: 'welcom_to_new_site', // Any value that will identify this message.
