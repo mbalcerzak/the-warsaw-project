@@ -6,8 +6,8 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.scss";
 import { digestLatestDate2021 } from "@site/src/scripts/dateVariables";
-import { LocationCountGraph } from "@site/src/scripts/charts-components/DistrLocation";
-import { SizeCountGraph } from "@site/src/scripts/charts-components/AptSize";
+import { LocationCountGraph } from "../../src/scripts/charts-components/DistrLocation";
+import { SizeCountGraph } from "../../src/scripts/charts-components/AptSize";
 
 
 const features = [
