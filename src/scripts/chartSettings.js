@@ -17,7 +17,7 @@ export const chartSettings = {
       pointBackgroundColor: "rgb(255, 177, 61)",
       borderColor: "rgb(255, 177, 61, 0.8)",
       borderWidth: 1,
-      pointHoverRadius: 5,
+      pointHoverRadius: 1,
     },
   },
   barStyle: {

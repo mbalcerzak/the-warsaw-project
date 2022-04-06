@@ -24,7 +24,7 @@ const Scraped = () => {
     labels: dates,
     datasets: [
       {
-        ...chartSettings.lineStyle.blue,
+        ...chartSettings.lineStyle.orange,
         label: "Scraped (Moving Average, 5 days)",
         data: scrapedAvg,
         fill: false,
@@ -49,15 +49,19 @@ const Scraped = () => {
           id: "y-axis-cumul",
           position: "right",
           gridLines: chartSettings.scales.yAxes.gridLinesStyle.visible,
-          ticks: chartSettings.scales.yAxes.ticksStyle.blue,
+          ticks: {
+            ...chartSettings.scales.yAxes.ticksStyle.blue,
+            max: 8000
+          }
         },
         {
           id: "y-axis-var",
           position: "left",
           gridLines: chartSettings.scales.yAxes.gridLinesStyle.hidden,
           ticks: {
-            ...chartSettings.scales.yAxes.ticksStyle.red
-          },
+            ...chartSettings.scales.yAxes.ticksStyle.red,
+            max: 8000
+          }
         },
       ],
     },
