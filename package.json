@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build_digest": "cd src/manual-md/",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "prebuild": "npm run build_digest",
