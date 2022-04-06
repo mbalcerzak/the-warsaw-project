@@ -6,7 +6,7 @@ const siteYear = startYear == currentYear ? String(startYear) : `${startYear} - 
 module.exports = {
   title: "Warsaw flats",
   tagline: "Tagline",
-  url: "https://covid-fr.misterfishup.com",
+  url: "http://mabdata.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",

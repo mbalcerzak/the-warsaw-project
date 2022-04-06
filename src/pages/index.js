@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import DatePicker from "react-date-picker";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.scss";
-import { monthEnLower } from "@site/src/scripts/utils";
 import { digestLatestDate2021 } from "@site/src/scripts/dateVariables";
-import { OfficialData } from "@site/src/scripts/digest-components";
 import { LocationCountGraph } from "@site/src/scripts/charts-components/DistrLocation";
 import { SizeCountGraph } from "@site/src/scripts/charts-components/AptSize";
 
@@ -93,53 +90,7 @@ function Banner() {
   );
 }
 
-function LatestOfficalData() {
-  const d = digestLatestDate2021.d;
-  const m = digestLatestDate2021.m;
-  const y = 2021;
-  const linkToLatestDigest = `/docs/${y}/${monthEnLower(m)}/${d}`;
-  const [selectedDate, onChange] = useState(new Date(2021, m - 1, d));
 
-  const toISO = (v) =>
-    `${v.getFullYear()}-${("0" + String(1 + v.getMonth())).slice(-2)}-${("0" + v.getDate()).slice(-2)}`;
-
-  return (
-    <section className={clsx("padding-vert--lg", styles.bgLatestOfficalData)}>
-      <div className="container">
-        <div className="text--center margin-vert--lg">
-          <h1>
-            <Translate id="homepage.LatestOfficialData.title">Latest Official Data</Translate>
-          </h1>
-          <h3>
-            <Translate id="homepage.LatestOfficialData.dateTitle">Date:</Translate>
-            <DatePicker
-              className={styles.DatePicker}
-              onChange={onChange}
-              value={selectedDate}
-              minDate={new Date(2020, 3 - 1, 2)}
-              maxDate={new Date(2021, m - 1, d)}
-              clearIcon={null}
-              format={translate({ id: "homepage.LatestOfficialData.dateFormat", message: "y Year M month d DaY" })}
-              calendarAriaLabel="Toggle calendar"
-              dayAriaLabel="Day"
-              monthAriaLabel="Month"
-              yearAriaLabel="Year"
-            />
-          </h3>
-        </div>
-        <OfficialData date={toISO(selectedDate)} />
-      </div>
-      <div className="flex-center--wrap margin-vert--md">
-        <Link
-          className={clsx("button button--outline button--primary button--lg", styles.btnCta)}
-          to={linkToLatestDigest}
-        >
-          <Translate id="homepage.LatestOfficialData.button.readTheLatestDigest">Latest Official Digest</Translate>
-        </Link>
-      </div>
-    </section>
-  );
-}
 
 function Features() {
   return (
@@ -164,9 +115,6 @@ function Features() {
 }
 
 function SomeCharts() {
-  const day = digestLatestDate2021.d;
-  const month = digestLatestDate2021.m;
-  const year = 2021;
 
   return (
     <section className={clsx("padding-vert--lg", styles.bgSomeCharts)}>
@@ -208,7 +156,6 @@ export default function Home() {
     <Layout title={title} description={description}>
       <Banner />
       <main>
-        <LatestOfficalData />
         <SomeCharts />
         <Features />
       </main>

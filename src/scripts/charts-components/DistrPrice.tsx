@@ -45,8 +45,6 @@ const Cases = ({ flatArea, district}) => {
     fetchData().catch(e=>console.log(e)) 
   },[])
 
-  console.log("averagePricesDistr", averagePricesDistr);
-
   const data = {
     labels: months,//tutaj podaje te months unikalne
     datasets: [
@@ -67,15 +65,16 @@ const Cases = ({ flatArea, district}) => {
       {
         ...chartSettings.barStyle.red,
         type: "bar",
-        label: translate({
-          id: "chartsCompo.Cases.label.new",
-          message: "Ads posted",
-        }),
+        label:  "Ads posted",
         data: numFlats,//tutaj ilosci
         yAxisID: "y-axis-var",
       },
     ],
   };
+
+  const max_value = Math.max(...averagePricesDistr);
+  const max_yaxis = Math.round(max_value * 1.1 / 1000) * 1000;
+
   const options = {
     legend: chartSettings.legend,
     tooltips: chartSettings.tooltips,
@@ -86,13 +85,20 @@ const Cases = ({ flatArea, district}) => {
           id: "y-axis-cumul",
           position: "right",
           gridLines: chartSettings.scales.yAxes.gridLinesStyle.visible,
-          ticks: chartSettings.scales.yAxes.ticksStyle.blue,
+          ticks: {
+            ...chartSettings.scales.yAxes.ticksStyle.blue,
+            max: max_yaxis
+          }
         },
         {
           id: "y-axis-cumul-distr",
           position: "right",
-          gridLines: chartSettings.scales.yAxes.gridLinesStyle.visible,
-          ticks: chartSettings.scales.yAxes.ticksStyle.blue,
+          display: false,
+          gridLines: chartSettings.scales.yAxes.gridLinesStyle.hidden,
+          ticks: {
+            ...chartSettings.scales.yAxes.ticksStyle.blue,
+            max: max_yaxis
+          }
         },
         {
           id: "y-axis-var",
