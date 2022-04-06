@@ -6,21 +6,13 @@ const siteYear = startYear == currentYear ? String(startYear) : `${startYear} - 
 module.exports = {
   title: "Warsaw flats",
   tagline: "Tagline",
-  url: "https://covid-fr.misterfishup.com",
+  url: "http://mabdata.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
   organizationName: "MAB Data",
   projectName: "mabdata",
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "pl"],
-    localeConfigs: {
-      en: { label: "English" },
-      pl: { label: "Polski" },
-    },
-  },
   themeConfig: {
     hideableSidebar: true,
     // algolia: {
@@ -28,10 +20,10 @@ module.exports = {
     //   indexName: '',
     // },
     image: "img/social_preview.png", // Relative to "static" directory
-    googleAnalytics: {
-      trackingID: "UA-173562145-3",
-      anonymizeIP: true,
-    },
+    // googleAnalytics: {
+    //   trackingID: "UA-173562145-3",
+    //   anonymizeIP: true,
+    // },
     colorMode: {
       defaultMode: "light",
       respectPrefersColorScheme: true,

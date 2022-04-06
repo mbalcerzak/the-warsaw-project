@@ -7,69 +7,16 @@ import { Line } from "react-chartjs-2";
 import { translate } from "@docusaurus/Translate";
 import { chartSettings } from "../chartSettings";
 import axios from "axios";
+import { districts, flat_areas } from "../../data/data";
 
-const flat_areas = [
-  {
-    value: '20_or_less',
-    label: '20 metres or less',
-  },
-  {
-    value: '20_30',
-    label: '20 - 30 metres',
-  },
-  {
-    value: '30_40',
-    label: '30 - 40 metres',
-  },
-  {
-    value: '40_50',
-    label: '40 - 50 metres',
-  },
-  {
-    value: '50_60',
-    label: '50 - 60 metres',
-  },
-  {
-    value: '60_70',
-    label: '60 - 70 metres',
-  },
-  {
-    value: '70_80',
-    label: '70 - 80 metres',
-  },
-  {
-    value: '80_or_more',
-    label: 'more than 80 metres',
-  },
-];
-
-const districts = [
-  {value: 'Bemowo', label: 'Bemowo'},
-  {value: 'Białołęka', label: 'Białołęka'},
-  {value: 'Bielany', label: 'Bielany'},
-  {value: 'Mokotów', label: 'Mokotów'},
-  {value: 'Ochota', label: 'Ochota'},
-  {value: 'Praga Południe', label: 'Praga Południe'},
-  {value: 'Praga Północ', label: 'Praga Północ'},
-  {value: 'Rembertów', label: 'Rembertów'},
-  {value: 'Targówek', label: 'Targówek'},
-  {value: 'Ursus', label: 'Ursus'},
-  {value: 'Ursynów', label: 'Ursynów'},
-  {value: 'Wawer', label: 'Wawer'},
-  {value: 'Wesoła', label: 'Wesoła'},
-  {value: 'Wilanów', label: 'Wilanów'},
-  {value: 'Wola', label: 'Wola'},
-  {value: 'Włochy', label: 'Włochy'},
-  {value: 'Śródmieście', label: 'Śródmieście'},
-  {value: 'Żoliborz', label: 'Żoliborz'},
-]
 
 const Cases = ({ flatArea, district}) => {
   //to jest taki maly trick zeby wyciagnac tylko pojedyncze miesiace z calego zbioru z danych
   // wiecej do poczytania tutaj https://yagisanatode.com/2021/07/03/get-a-unique-list-of-objects-in-an-array-of-object-in-javascript/
   
   //tutaj nam staty potrzebne zeby dynamicznie zmieniac dane na wykresie
-  const [averagePrices, setAveragePrices] = useState([]);
+  const [averagePricesDistrCat, setAveragePricesCat] = useState([]);
+  const [averagePricesDistr, setAveragePricesDistr] = useState([]);
   const [flatsData, setFlatsData] = useState([]);
   const [numFlats, setNumFlats] = useState([]);
   const [months, setMonths] = useState([]);
@@ -78,17 +25,19 @@ const Cases = ({ flatArea, district}) => {
   const fetchData = useCallback(async () => {
     const res = await axios.get('https://raw.githubusercontent.com/mbalcerzak/warsaw_flats_api/raspberry-updates/json_dir/flats.json');
     setFlatsData(res.data.price_m_loc_area_cat.map(t=>t));
-    setMonths([...new Map(res.data.price_m_loc_area_cat.map((item) => [item["month"], item.month])).values()])
-    setAveragePrices(res.data.price_m_loc_area_cat.filter(f => f.location === district && f.area_category === flatArea).map(f => f.avg_price_per_m))
-    setNumFlats(res.data.price_m_loc_area_cat.filter(f => f.location === district && f.area_category === flatArea).map(f => f.num_flats))
+    setMonths([...new Map(res.data.price_m_loc_area_cat.map((item) => [item["month"], item.month])).values()]);
+    setAveragePricesCat(res.data.price_m_loc_area_cat.filter(f => f.location === district && f.area_category === flatArea).map(f => f.avg_price_per_m));
+    setAveragePricesDistr(res.data.price_m_location.filter(f => f.location === district).map(f => f.avg_price_per_m));
+    setNumFlats(res.data.price_m_loc_area_cat.filter(f => f.location === district && f.area_category === flatArea).map(f => f.num_flats));
   }, [])
 
   
   // useEffect odpala sie za kazdym razem jak wartosci podane jako drugi argument sie zmienia
   useEffect(() => {
     // tutaj filtrujemy po flatArea i district i uzywane set state zeby wlasnie react wykryl ze dane sie zmienily i przerysowal wykres :)
-    setAveragePrices(flatsData.filter(f => f.location === district && f.area_category === flatArea).map(f => f.avg_price_per_m))
-    setNumFlats(flatsData.filter(f => f.location === district && f.area_category === flatArea).map(f => f.num_flats))
+    setAveragePricesCat(flatsData.filter(f => f.location === district && f.area_category === flatArea).map(f => f.avg_price_per_m));
+    setAveragePricesDistr(flatsData.filter(f => f.location === district).map(f => f.avg_price_per_m));
+    setNumFlats(flatsData.filter(f => f.location === district && f.area_category === flatArea).map(f => f.num_flats));
   },[flatArea,district])// << te wartosci tutaj. czyli jak nasze dropdowny sie zmienia :)
   
 
@@ -101,26 +50,31 @@ const Cases = ({ flatArea, district}) => {
     datasets: [
       {
         ...chartSettings.lineStyle.blue,
-        label: translate({
-          id: "chartsComp.Cases.label.total",
-          message: "Average price",
-        }),
-        data: averagePrices,//tutaj ceny
+        label: "Average price (district/size)",
+        data: averagePricesDistrCat,
         fill: false,
         yAxisID: "y-axis-cumul",
       },
       {
+        ...chartSettings.lineStyle.orange,
+        label: "Average price (district)",
+        data: averagePricesDistr,
+        fill: false,
+        yAxisID: "y-axis-cumul-distr",
+      },
+      {
         ...chartSettings.barStyle.red,
         type: "bar",
-        label: translate({
-          id: "chartsCompo.Cases.label.new",
-          message: "Ads posted",
-        }),
+        label:  "Ads posted",
         data: numFlats,//tutaj ilosci
         yAxisID: "y-axis-var",
       },
     ],
   };
+
+  const max_value = Math.max(...averagePricesDistr);
+  const max_yaxis = Math.round(max_value * 1.1 / 1000) * 1000;
+
   const options = {
     legend: chartSettings.legend,
     tooltips: chartSettings.tooltips,
@@ -131,7 +85,20 @@ const Cases = ({ flatArea, district}) => {
           id: "y-axis-cumul",
           position: "right",
           gridLines: chartSettings.scales.yAxes.gridLinesStyle.visible,
-          ticks: chartSettings.scales.yAxes.ticksStyle.blue,
+          ticks: {
+            ...chartSettings.scales.yAxes.ticksStyle.blue,
+            max: max_yaxis
+          }
+        },
+        {
+          id: "y-axis-cumul-distr",
+          position: "right",
+          display: false,
+          gridLines: chartSettings.scales.yAxes.gridLinesStyle.hidden,
+          ticks: {
+            ...chartSettings.scales.yAxes.ticksStyle.blue,
+            max: max_yaxis
+          }
         },
         {
           id: "y-axis-var",

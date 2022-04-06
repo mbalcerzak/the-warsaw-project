@@ -5,6 +5,10 @@ description: Some charts
 
 import Link from "@docusaurus/Link";
 import { PriceDistrictMonth } from "@site/src/scripts/charts-components/DistrPrice";
+import { AdsScraped } from "@site/src/scripts/charts-components/ScrapedChanges";
+import { LocationCountGraph } from "@site/src/scripts/charts-components/DistrLocation";
+import { SizeCountGraph } from "@site/src/scripts/charts-components/AptSize";
+
 
 <h1 className="pages--h1">Warsaw statistics</h1>
 <p className="subtitle">Check out price history for each district</p>
@@ -12,3 +16,15 @@ import { PriceDistrictMonth } from "@site/src/scripts/charts-components/DistrPri
 ## Price history (PLN per m<sup>2)</sup> {#price-district-month}
 
 <PriceDistrictMonth />
+
+## Number of ads scraped per day {#scraped}
+
+<AdsScraped />
+
+## Number of flats in each district {#district-count}
+
+<LocationCountGraph />
+
+## Number of flats in each size category
+
+<SizeCountGraph />
