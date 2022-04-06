@@ -13,14 +13,6 @@ module.exports = {
   favicon: "img/favicon.png",
   organizationName: "MAB Data",
   projectName: "mabdata",
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "pl"],
-    localeConfigs: {
-      en: { label: "English" },
-      pl: { label: "Polski" },
-    },
-  },
   themeConfig: {
     hideableSidebar: true,
     // algolia: {
@@ -28,10 +20,10 @@ module.exports = {
     //   indexName: '',
     // },
     image: "img/social_preview.png", // Relative to "static" directory
-    googleAnalytics: {
-      trackingID: "UA-173562145-3",
-      anonymizeIP: true,
-    },
+    // googleAnalytics: {
+    //   trackingID: "UA-173562145-3",
+    //   anonymizeIP: true,
+    // },
     colorMode: {
       defaultMode: "light",
       respectPrefersColorScheme: true,
