@@ -9,8 +9,9 @@ import styles from "./styles.module.scss";
 import { monthEnLower } from "@site/src/scripts/utils";
 import { digestLatestDate2021 } from "@site/src/scripts/dateVariables";
 import { OfficialData } from "@site/src/scripts/digest-components";
-import { CasesTrend } from "@site/src/scripts/charts-components/Cases";
-import { DeathsTrend } from "@site/src/scripts/charts-components/Deaths";
+import { LocationCountGraph } from "@site/src/scripts/charts-components/DistrLocation";
+import { SizeCountGraph } from "@site/src/scripts/charts-components/AptSize";
+
 
 const features = [
   {
@@ -177,10 +178,10 @@ function SomeCharts() {
         </div>
         <div className="row">
           <div className="col col--6 padding--lg">
-            <CasesTrend />
+            <LocationCountGraph />
           </div>
           <div className="col col--6 padding--lg">
-            <DeathsTrend />
+            <SizeCountGraph />
           </div>
         </div>
       </div>
