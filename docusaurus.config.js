@@ -13,6 +13,9 @@ module.exports = {
   favicon: "img/favicon.png",
   organizationName: "MAB Data",
   projectName: "mabdata",
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
   themeConfig: {
     hideableSidebar: true,
     // algolia: {
