@@ -25,7 +25,7 @@ module.exports = {
     //   anonymizeIP: true,
     // },
     colorMode: {
-      defaultMode: "light",
+      defaultMode: "dark",
       respectPrefersColorScheme: true,
     },
     // announcementBar: {
