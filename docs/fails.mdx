@@ -1,0 +1,43 @@
+---
+title: 😅 Lessons learnt
+description: What went wrong and how I salvaged it
+hide_table_of_contents: false
+tags: [fails, leassons learnt]
+autoCollapseSidebarCategories: false
+---
+
+import Link from "@docusaurus/Link";
+
+
+While building this project I encountered multitude of "challenges" and I describe them here along with chosen fixes.
+There are some things I would do differently with the knowledge I have now but the project is good enough :heart:
+
+# Problems with...
+
+## ... the business problem
+| :boom: Challenges| :fire: Solutions |
+|:---------------| --------------- |
+| Are people interested in what I'm buliding? | Even if it's only my own questions that I'm answering it's still worh building|
+
+
+## ... gathering the data
+| :boom: Challenges| :fire: Solutions |
+|:---------------| --------------- |
+| Is Raspberry Pi OK or should I use something like AWS Lambda? | Raspberry Pi is cheaper and does the job so far |
+| Checking the price was too slow | Instead of checking the database itself (to see if the ad is already present) I query it in the beginning, load results to JSON and check this file. That also reduced the number of times teh database got locked beyond repair|
+| I gathered more than 500k ads last year and there are only 2mln people in Warsaw | Database might contain duplicates and I will need to remove them during cleaning | 
+| Power outages (and me moving flats) caused gaps in data | ¯\\_(ツ)_/¯ A cloud scraper would be more robust and reliable but I am not a millionare 💸 | 
+
+## ... database
+| :boom: Challenges| :fire: Solutions |
+|:---------------| --------------- |
+| [SQLite]('https://www.sqlite.org/index.html') database keeps getting locked | Sometimes rebooting the Raspberry Pi worked, other times I had to use my weekly backup. Next time I would use Postgres (SQLite is perfect for student projects but this one grew out of it)|
+| I chose the wrong Primary Key (8 last numbers from "ID" instead of the whole number)| Quick database migration solved it, replaced the old PK with the full "ad ID" number |
+| How do I save the price history? | My first idea was to use _JSON {"date":YYYY-MM-DD, "price": XXX}_ but it introduced potential problems. Eventually, I created another table with prices. Connected to the flat table via ad ID. And that got it to [3rd Normal Form](https://en.wikipedia.org/wiki/Database_normalization)  |
+
+
+## ... price changes
+| :boom: Challenges| :fire: Solutions |
+|:---------------| --------------- |
+|Some owners change the price daily by 1 PLN (0.2 EUR) just to make the ad more visible| Oh well... keep gathering the data, I will clean it after |
+|Sometimes the price is actually a phone number or 200 PLN instead of 200k PLN| I will worry about it during data cleaning |

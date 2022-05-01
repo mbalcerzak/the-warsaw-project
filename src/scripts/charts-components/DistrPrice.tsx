@@ -87,7 +87,8 @@ const Cases = ({ flatArea, district}) => {
           gridLines: chartSettings.scales.yAxes.gridLinesStyle.visible,
           ticks: {
             ...chartSettings.scales.yAxes.ticksStyle.blue,
-            max: max_yaxis
+            max: max_yaxis,
+            min: 0
           }
         },
         {
@@ -97,7 +98,8 @@ const Cases = ({ flatArea, district}) => {
           gridLines: chartSettings.scales.yAxes.gridLinesStyle.hidden,
           ticks: {
             ...chartSettings.scales.yAxes.ticksStyle.blue,
-            max: max_yaxis
+            max: max_yaxis,
+            min: 0
           }
         },
         {
@@ -105,7 +107,7 @@ const Cases = ({ flatArea, district}) => {
           position: "left",
           gridLines: chartSettings.scales.yAxes.gridLinesStyle.hidden,
           ticks: {
-            ...chartSettings.scales.yAxes.ticksStyle.red
+            ...chartSettings.scales.yAxes.ticksStyle.red,
           },
         },
       ],
