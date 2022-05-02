@@ -1,9 +1,12 @@
 {
+  "esModuleInterop": true,
   "extends": "@tsconfig/docusaurus/tsconfig.json",
   "include": [
     "src/"
   ],
   "compilerOptions": {
+    "jsx": "react",
+    "jsx": "react",
     "lib": [
       "es2019",
       "dom",

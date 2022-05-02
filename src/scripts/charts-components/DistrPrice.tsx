@@ -4,7 +4,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import { Line } from "react-chartjs-2";
-import { translate } from "@docusaurus/Translate";
 import { chartSettings } from "../chartSettings";
 import axios from "axios";
 import { districts, flat_areas } from "../../data/data";
@@ -24,7 +23,7 @@ const Cases = ({ flatArea, district}) => {
   const fetchData = useCallback(async () => {
     const res = await axios.get('https://raw.githubusercontent.com/mbalcerzak/warsaw_flats_api/raspberry-updates/json_dir/flats.json');
     setFlatsData(res.data.price_m_loc_area_cat.map(t=>t));
-    setMonths(Array.from([...new Map(res.data.price_m_loc_area_cat.map((item) => [item["month"], item.month])).values()]));
+    setMonths(Array.from(new Set(res.data.price_m_loc_area_cat.map((item) => item.month))));
     setAveragePricesCat(res.data.price_m_loc_area_cat.filter(f => f.location === district && f.area_category === flatArea).map(f => f.avg_price_per_m));
     setAveragePricesDistr(res.data.price_m_location.filter(f => f.location === district).map(f => f.avg_price_per_m));
     setNumFlats(res.data.price_m_loc_area_cat.filter(f => f.location === district && f.area_category === flatArea).map(f => f.num_flats));
@@ -38,10 +37,10 @@ const Cases = ({ flatArea, district}) => {
     setAveragePricesDistr(flatsData.filter(f => f.location === district).map(f => f.avg_price_per_m));
     setNumFlats(flatsData.filter(f => f.location === district && f.area_category === flatArea).map(f => f.num_flats));
   },[flatArea,district])// << te wartosci tutaj. czyli jak nasze dropdowny sie zmienia :)
-  
+
 
   useEffect( () => {
-    fetchData().catch(e=>console.log(e)) 
+    fetchData().catch(e=>console.log(e))
   },[])
 
   const data = {
@@ -121,7 +120,6 @@ const Cases = ({ flatArea, district}) => {
 // --------
 
 export const PriceDistrictMonth = () => {
-  const dateFmt = translate({ id: "dateFmt", message: "m/d" });
   const [flatArea, setFlatArea] = React.useState('40_50');
   const [district, setDistrict] = React.useState('Mokotów');
 
