@@ -20,12 +20,11 @@ const Cases = ({ flatArea, district}) => {
   const [flatsData, setFlatsData] = useState([]);
   const [numFlats, setNumFlats] = useState([]);
   const [months, setMonths] = useState([]);
-  
 
   const fetchData = useCallback(async () => {
     const res = await axios.get('https://raw.githubusercontent.com/mbalcerzak/warsaw_flats_api/raspberry-updates/json_dir/flats.json');
     setFlatsData(res.data.price_m_loc_area_cat.map(t=>t));
-    setMonths([...new Map(res.data.price_m_loc_area_cat.map((item) => [item["month"], item.month])).values()]);
+    setMonths(Array.from([...new Map(res.data.price_m_loc_area_cat.map((item) => [item["month"], item.month])).values()]));
     setAveragePricesCat(res.data.price_m_loc_area_cat.filter(f => f.location === district && f.area_category === flatArea).map(f => f.avg_price_per_m));
     setAveragePricesDistr(res.data.price_m_location.filter(f => f.location === district).map(f => f.avg_price_per_m));
     setNumFlats(res.data.price_m_loc_area_cat.filter(f => f.location === district && f.area_category === flatArea).map(f => f.num_flats));
