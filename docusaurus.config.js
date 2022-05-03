@@ -14,11 +14,14 @@ module.exports = {
   organizationName: "MAB Data",
   projectName: "mabdata",
   themeConfig: {
-    hideableSidebar: true,
     // algolia: {
-    //   apiKey: '',
-    //   indexName: '',
+    //   // The application ID provided by Algolia
+    //   appId: 'K5UOQ0RVBA',
+    //   // Public API key: it is safe to commit it
+    //   apiKey: 'e7311d2c32fbcca26fffca2a49b9c000',
+    //   indexName: 'dev_mabdata'
     // },
+    hideableSidebar: true,
     image: "img/social_preview.png", // Relative to "static" directory
     // googleAnalytics: {
     //   trackingID: "UA-173562145-3",
