@@ -140,7 +140,7 @@
     "@algolia/requester-common" "4.12.2"
     "@algolia/transporter" "4.12.2"
 
-"@algolia/client-search@4.13.0", "@algolia/client-search@^4.9.1":
+"@algolia/client-search@4.13.0":
   version "4.13.0"
   resolved "https://registry.yarnpkg.com/@algolia/client-search/-/client-search-4.13.0.tgz#2d8ff8e755c4a37ec89968f3f9b358eed005c7f0"
   integrity sha512-blgCKYbZh1NgJWzeGf+caKE32mo3j54NprOf0LZVCubQb3Kx37tk1Hc8SDs9bCAE8hUvf3cazMPIg7wscSxspA==
