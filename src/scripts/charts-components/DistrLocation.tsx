@@ -9,7 +9,7 @@ const LocationCount = () => {
   const [districtsCount, setDistrCount] = useState([]);
 
   const fetchData = useCallback(async () => {
-    const res = await axios.get('https://raw.githubusercontent.com/mbalcerzak/warsaw_flats_api/raspberry-updates/json_dir/flats.json');
+    const res = await axios.get('https://raw.githubusercontent.com/mbalcerzak/idealista-mongo/mabdata-json/output/flats_mabdata.json');
     setDistr(Object.keys(res.data.flats_per_location));
     setDistrCount(Object.values(res.data.flats_per_location));
   }, [])

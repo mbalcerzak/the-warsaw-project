@@ -4,7 +4,7 @@ const siteYear = startYear == currentYear ? String(startYear) : `${startYear} - 
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "Warsaw flats",
+  title: "Valencia flats",
   tagline: "Tagline",
   url: "https://serene-palmier-f01f35.netlify.app",
   baseUrl: "/",
@@ -45,7 +45,7 @@ module.exports = {
     navbar: {
       hideOnScroll: true,
       // style: 'primary', // or 'dark'
-      title: "Warsaw flats",
+      title: "Valencia flats",
       logo: {
         alt: "Website Logo",
         src: "img/house_search.svg",
@@ -54,17 +54,17 @@ module.exports = {
       items: [
         {
           to: "charts",
-          label: "charts",
+          label: "Charts",
         },
         {
           to: "about",
-          label: "author",
+          label: "Author",
           position: "right",
         },
         { 
           type: "doc",
           docId: "about", 
-          label: "docs", 
+          label: "Docs", 
           position: "left", 
         },
       ],
@@ -76,24 +76,26 @@ module.exports = {
           items: [
             {
               html: `
-                <img src="/img/neighbourhood.svg" alt="Warsaw flats" title="Warsaw flats" class="footer-logo"/>
+                <img src="/img/neighbourhood.svg" alt="Valencia flats" title="Valencia flats" class="footer-logo"/>
               `,
             },
           ],
         },
-        {
-          title: "Data",
-          items: [
-            {
-              label: "How I built it",
-              to: "docs/about",
-            },
-            {
-              label: "Charts",
-              to: "charts",
-            },
-          ],
-        },
+        // {
+        //   title: "Data",
+        //   items: [
+        //     {
+        //       label: "How I built it",
+        //       to: "docs/about",
+        //     },
+        //     {
+        //       label: "Charts",
+        //       to: "charts",
+        //     },
+        //   ],
+        // },
+        {},
+        {},
         {
           title: "Contact",
           items: [
@@ -103,7 +105,7 @@ module.exports = {
             },
             {
               label: "Buy me a coffee",
-              href: "https://www.buymeacoffee.com/mabdata",
+              href: "https://www.buymeacoffee.com/mab.data",
             },
             {
               label: "GitHub",
@@ -112,7 +114,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${siteYear} Warsaw flats`,
+      copyright: `Copyright © ${siteYear} Valencia flats`,
     },
   },
   presets: [

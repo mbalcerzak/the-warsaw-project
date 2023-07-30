@@ -1,9 +1,9 @@
-# Warsaw Apartment prices
+# Valencia Apartment prices
 
 
 ### Data
-Scraped from gumtree.com using scraper set up on Raspberry Pi.
-Started scraping in January 2021, crawler is loading new data every hour since then.
+Scraped from idealista.com using scraper set up on Raspberry Pi.
+Started scraping in XXX , crawler is loading new data every day since then.
 
 ---
 
@@ -55,3 +55,6 @@ yarn serve
 ## NVM, Node.js
 
 [installing nvm](https://tecadmin.net/install-nvm-macos-with-homebrew/)
+
+
+Orange colour from undraw: #FFB21D

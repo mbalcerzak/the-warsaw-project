@@ -6,4 +6,14 @@ sidebar_position: 3
 ---
 
 
+## Data schema
 
+- categorical columns possible values
+
+- feature statistics
+
+- compare schema of training and validation datasets
+
+- calculate and display anomalies
+
+- 
