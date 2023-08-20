@@ -120,7 +120,7 @@ const Cases = ({ flatArea, district}) => {
 // --------
 
 export const PriceDistrictMonth = () => {
-  const [flatArea, setFlatArea] = React.useState('3');
+  const [flatArea, setFlatArea] = React.useState('120-140m');
   const [district, setDistrict] = React.useState('Russafa');
 
   const handleChange = (event) => {

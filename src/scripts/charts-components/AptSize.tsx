@@ -27,7 +27,7 @@ const SizeCount = () => {
       {
         ...chartSettings.barStyle.red,
         type: "bar",
-        label: "Number of flats per size category",
+        label: "Flat count",
         data: sizeCount,
         yAxisID: "y-axis-var",
       },

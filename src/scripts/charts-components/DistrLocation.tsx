@@ -27,7 +27,7 @@ const LocationCount = () => {
       {
         ...chartSettings.barStyle.red,
         type: "bar",
-        label: "Number of flats per district",
+        label: "Flat count",
         data: districtsCount,
         yAxisID: "y-axis-var",
       },

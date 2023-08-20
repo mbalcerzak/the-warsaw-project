@@ -1,86 +1,42 @@
 [
     {
-        "value": 0,
-        "label": "0 rooms"
+        "value": "max 40m",
+        "label": "max 40m"
     },
     {
-        "value": 1,
-        "label": "1 rooms"
+        "value": "40-60m",
+        "label": "40-60m"
     },
     {
-        "value": 2,
-        "label": "2 rooms"
+        "value": "60-80m",
+        "label": "60-80m"
     },
     {
-        "value": 3,
-        "label": "3 rooms"
+        "value": "80-100m",
+        "label": "80-100m"
     },
     {
-        "value": 4,
-        "label": "4 rooms"
+        "value": "100-120m",
+        "label": "100-120m"
     },
     {
-        "value": 5,
-        "label": "5 rooms"
+        "value": "120-140m",
+        "label": "120-140m"
     },
     {
-        "value": 6,
-        "label": "6 rooms"
+        "value": "140-160m",
+        "label": "140-160m"
     },
     {
-        "value": 7,
-        "label": "7 rooms"
+        "value": "160-180m",
+        "label": "160-180m"
     },
     {
-        "value": 8,
-        "label": "8 rooms"
+        "value": "180-200m",
+        "label": "180-200m"
     },
     {
-        "value": 9,
-        "label": "9 rooms"
-    },
-    {
-        "value": 10,
-        "label": "10 rooms"
-    },
-    {
-        "value": 11,
-        "label": "11 rooms"
-    },
-    {
-        "value": 12,
-        "label": "12 rooms"
-    },
-    {
-        "value": 13,
-        "label": "13 rooms"
-    },
-    {
-        "value": 14,
-        "label": "14 rooms"
-    },
-    {
-        "value": 15,
-        "label": "15 rooms"
-    },
-    {
-        "value": 16,
-        "label": "16 rooms"
-    },
-    {
-        "value": 17,
-        "label": "17 rooms"
-    },
-    {
-        "value": 23,
-        "label": "23 rooms"
-    },
-    {
-        "value": 34,
-        "label": "34 rooms"
-    },
-    {
-        "value": 44,
-        "label": "44 rooms"
+        "value": "200m+",
+        "label": "200m+"
     }
 ]

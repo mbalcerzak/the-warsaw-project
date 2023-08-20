@@ -22,28 +22,29 @@ module.exports = {
       indexName: 'dev_mabdata'
     },
     hideableSidebar: true,
+    collapsible: false,
     image: "img/social_preview.png", // Relative to "static" directory
     // googleAnalytics: {
     //   trackingID: "UA-173562145-3",
     //   anonymizeIP: true,
     // },
     colorMode: {
-      defaultMode: "dark",
+      defaultMode: "light",
       respectPrefersColorScheme: true,
     },
-    // announcementBar: {
-    //   id: 'welcom_to_new_site', // Any value that will identify this message.
-    //   content:
-    //     'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
-    //   backgroundColor: '#fafbfc', // Defaults to `#fff`.
-    //   textColor: '#091E42', // Defaults to `#000`.
-    // },
+    announcementBar: {
+      id: 'welcom_to_new_site', // Any value that will identify this message.
+      content:
+        'Do you like the website? I am a Cloud / MLOps Engineer, let`s connect :) <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/malgorzata-a-balcerzak/">My LinkedIn</a>',
+      backgroundColor: '#b580cb', // Defaults to `#fff`.
+      textColor: '#091E42', // Defaults to `#000`.
+    },
     prism: {
       theme: require("prism-react-renderer/themes/github"),
       darkTheme: require("prism-react-renderer/themes/dracula"),
     },
     navbar: {
-      hideOnScroll: true,
+      hideOnScroll: false,
       // style: 'primary', // or 'dark'
       title: "Valencia flats",
       logo: {
@@ -55,6 +56,10 @@ module.exports = {
         {
           to: "charts",
           label: "Charts",
+        },
+        {
+          to: "flats",
+          label: "Flats",
         },
         {
           to: "about",
@@ -123,7 +128,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          routeBasePath: "docs",
+          routeBasePath: "docs"
         },
         blog: {
           showReadingTime: true,
