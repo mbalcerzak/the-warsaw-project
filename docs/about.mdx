@@ -14,7 +14,7 @@ import Link from "@docusaurus/Link";
 ---
 
 The aim of this project is to build a model that would help me 
-identify a good investment opportunity (overpriced or undervalued apartment in Warsaw). 
+identify a good investment opportunity (overpriced or undervalued apartment in Valencia). 
 The model would predict a price given the data and indicate whether the actual price 
 is too high or too low. 
 
@@ -26,47 +26,43 @@ is too high or too low.
 - [Scrapy](https://scrapy.org/)
 
 #### Database:
-- [SQLite](https://www.sqlite.org/index.html)
+- [MongoDB](https://www.mongodb.com/)
 
 #### Output API:
-- JSON hosted on [GitHub](https://github.com/mbalcerzak/warsaw_flats_api/tree/raspberry-updates/json_dir)
+- JSON hosted on [GitHub](https://github.com/mbalcerzak/Valencia_flats_api/tree/raspberry-updates/json_dir)
 
 #### Scraper:
-- on [Raspberry Pi](https://www.raspberrypi.org/) on my fridge 🤫
+- on [Raspberry Pi](https://www.raspberrypi.org/)
 - using [Cron](https://crontab.guru/)
-- from [gumtree.com](https://www.gumtree.pl/s-mieszkania-i-domy-sprzedam-i-kupie/warszawa/v1c9073l3200008p1)
+- from [idealista.com](https://www.idealista.com/)
 
 #### Price changes
-Apart from the ads I am also looking out for price changes. Some owners changed the price of the ad more 
-than 5 times within 2 months period. I am curious to see if that additional information can be used in 
-some way or if there is a way to predict whether the price of the apartment will change.
+The script checks if the apartment is already present in the database and if yes, if the price has changed.
 
 
 ## Basic statistics
 ---
-The average price for every month per every district of Warsaw and apartment "category size" is calulated and output as REST API.
+The average price for every month per every district of Valencia and apartment "category size" is calulated and output as REST API.
 Data is (was) updated daily. The last update was performed in February 2022 due to no new advertisements being 
 published on gumtree after the Ukraine War started.
 
 Aggregated statistics include:
 - average price per square metre durign each month, per district per size category
 - daily number of posted advertisements
-- daily number of scraper advertisements
 - number of price changes on a given day 
 
 
 ## Model building
 ---
 - [Python 3.9](https://www.python.org/)
-- demo and exploration: [Jupyter Notebook](https://jupyter.org/)
 - [scikit-learn](https://scikit-learn.org/stable/)
 - [PyTorch](https://pytorch.org/)
 
 ## Pipeline
 ---
 
-- https://github.com/mbalcerzak/warsaw-real-estate-cleaning
-- https://github.com/mbalcerzak/warsaw-real-estate-analysis
+- https://github.com/mbalcerzak/Valencia-real-estate-cleaning
+- https://github.com/mbalcerzak/Valencia-real-estate-analysis
 - https://github.com/mbalcerzak/apartment-price-model
 
 ## Production
@@ -78,7 +74,6 @@ Aggregated statistics include:
 
 #### Built with
 - [Docusaurus](https://docusaurus.io/)
-- JavaScript
 - Typescript
 - React
 

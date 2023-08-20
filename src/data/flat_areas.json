@@ -1,34 +1,42 @@
 [
-{
-    "value": "20_or_less",
-    "label": "20 metres or less"
-},
-{
-    "value": "20_30",
-    "label": "20 - 30 metres"
-},
-{
-    "value": "30_40",
-    "label": "30 - 40 metres"
-},
-{
-    "value": "40_50",
-    "label": "40 - 50 metres"
-},
-{
-    "value": "50_60",
-    "label": "50 - 60 metres"
-},
-{
-    "value": "60_70",
-    "label": "60 - 70 metres"
-},
-{
-    "value": "70_80",
-    "label": "70 - 80 metres"
-},
-{
-    "value": "80_or_more",
-    "label": "more than 80 metres"
-}
+    {
+        "value": "max 40m",
+        "label": "max 40m"
+    },
+    {
+        "value": "40-60m",
+        "label": "40-60m"
+    },
+    {
+        "value": "60-80m",
+        "label": "60-80m"
+    },
+    {
+        "value": "80-100m",
+        "label": "80-100m"
+    },
+    {
+        "value": "100-120m",
+        "label": "100-120m"
+    },
+    {
+        "value": "120-140m",
+        "label": "120-140m"
+    },
+    {
+        "value": "140-160m",
+        "label": "140-160m"
+    },
+    {
+        "value": "160-180m",
+        "label": "160-180m"
+    },
+    {
+        "value": "180-200m",
+        "label": "180-200m"
+    },
+    {
+        "value": "200m+",
+        "label": "200m+"
+    }
 ]

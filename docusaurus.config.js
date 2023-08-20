@@ -4,7 +4,7 @@ const siteYear = startYear == currentYear ? String(startYear) : `${startYear} - 
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "Warsaw flats",
+  title: "Valencia flats",
   tagline: "Tagline",
   url: "https://serene-palmier-f01f35.netlify.app",
   baseUrl: "/",
@@ -14,35 +14,39 @@ module.exports = {
   organizationName: "MAB Data",
   projectName: "mabdata",
   themeConfig: {
+    algolia: {
+      // The application ID provided by Algolia
+      appId: 'K5UOQ0RVBA',
+      // Public API key: it is safe to commit it
+      apiKey: 'e7311d2c32fbcca26fffca2a49b9c000',
+      indexName: 'dev_mabdata'
+    },
     hideableSidebar: true,
-    // algolia: {
-    //   apiKey: '',
-    //   indexName: '',
-    // },
+    collapsible: false,
     image: "img/social_preview.png", // Relative to "static" directory
     // googleAnalytics: {
     //   trackingID: "UA-173562145-3",
     //   anonymizeIP: true,
     // },
     colorMode: {
-      defaultMode: "dark",
+      defaultMode: "light",
       respectPrefersColorScheme: true,
     },
-    // announcementBar: {
-    //   id: 'welcom_to_new_site', // Any value that will identify this message.
-    //   content:
-    //     'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
-    //   backgroundColor: '#fafbfc', // Defaults to `#fff`.
-    //   textColor: '#091E42', // Defaults to `#000`.
-    // },
+    announcementBar: {
+      id: 'welcom_to_new_site', // Any value that will identify this message.
+      content:
+        'Do you like the website? I am a Cloud / MLOps Engineer, let`s connect :) <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/malgorzata-a-balcerzak/">My LinkedIn</a>',
+      backgroundColor: '#b580cb', // Defaults to `#fff`.
+      textColor: '#091E42', // Defaults to `#000`.
+    },
     prism: {
       theme: require("prism-react-renderer/themes/github"),
       darkTheme: require("prism-react-renderer/themes/dracula"),
     },
     navbar: {
-      hideOnScroll: true,
+      hideOnScroll: false,
       // style: 'primary', // or 'dark'
-      title: "Warsaw flats",
+      title: "Valencia flats",
       logo: {
         alt: "Website Logo",
         src: "img/house_search.svg",
@@ -51,17 +55,21 @@ module.exports = {
       items: [
         {
           to: "charts",
-          label: "charts",
+          label: "Charts",
+        },
+        {
+          to: "flats",
+          label: "Flats",
         },
         {
           to: "about",
-          label: "author",
+          label: "Author",
           position: "right",
         },
         { 
           type: "doc",
           docId: "about", 
-          label: "docs", 
+          label: "Docs", 
           position: "left", 
         },
       ],
@@ -73,24 +81,26 @@ module.exports = {
           items: [
             {
               html: `
-                <img src="/img/neighbourhood.svg" alt="Warsaw flats" title="Warsaw flats" class="footer-logo"/>
+                <img src="/img/neighbourhood.svg" alt="Valencia flats" title="Valencia flats" class="footer-logo"/>
               `,
             },
           ],
         },
-        {
-          title: "Data",
-          items: [
-            {
-              label: "How I built it",
-              to: "docs/about",
-            },
-            {
-              label: "Charts",
-              to: "charts",
-            },
-          ],
-        },
+        // {
+        //   title: "Data",
+        //   items: [
+        //     {
+        //       label: "How I built it",
+        //       to: "docs/about",
+        //     },
+        //     {
+        //       label: "Charts",
+        //       to: "charts",
+        //     },
+        //   ],
+        // },
+        {},
+        {},
         {
           title: "Contact",
           items: [
@@ -100,7 +110,7 @@ module.exports = {
             },
             {
               label: "Buy me a coffee",
-              href: "https://www.buymeacoffee.com/mabdata",
+              href: "https://www.buymeacoffee.com/mab.data",
             },
             {
               label: "GitHub",
@@ -109,7 +119,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${siteYear} Warsaw flats`,
+      copyright: `Copyright © ${siteYear} Valencia flats`,
     },
   },
   presets: [
@@ -118,7 +128,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          routeBasePath: "docs",
+          routeBasePath: "docs"
         },
         blog: {
           showReadingTime: true,

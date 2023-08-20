@@ -10,7 +10,7 @@ const Scraped = () => {
   const [scrapedAvg, setScrapedAvg] = useState([]);
   
   const fetchData = useCallback(async () => {
-    const res = await axios.get('https://raw.githubusercontent.com/mbalcerzak/warsaw_flats_api/raspberry-updates/json_dir/flats.json');
+    const res = await axios.get('https://raw.githubusercontent.com/mbalcerzak/idealista-mongo/mabdata-json/output/flats_mabdata.json');
     setDates(Object.keys(res.data.scraped_per_day));
     setScraped(Object.values(res.data.scraped_per_day));
     setScrapedAvg(Object.values(res.data.scraped_per_day_m_avg));

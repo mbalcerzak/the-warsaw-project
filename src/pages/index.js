@@ -11,28 +11,28 @@ import { SizeCountGraph } from "@site/src/scripts/charts-components/AptSize";
 
 const features = [
   {
-    title: translate({ id: "homepage.features.officialStatistics.title", message: "...What market crash?" }),
+    title: translate({ id: "homepage.features.news.title", message: "Data" }),
+    imageUrl: "img/features/quiet_town.svg",
+    description: translate({
+      id: "homepage.features.news.description",
+      message: "First gathering the data from spanish real estate websites ...",
+    }),
+  },
+  {
+    title: translate({ id: "homepage.features.officialStatistics.title", message: "Analysis" }),
     imageUrl: "img/features/growth_curve.svg",
     description: translate({
       id: "homepage.features.officialStatistics.description",
       message:
-        "Have they been telling you too how you should wait with buying a flat because the bubble will burst any time now? lol. ANY TIME NOW.",
+        "... then cleaning, transforming, analysing, aggregating, modelling ...",
     }),
   },
   {
-    title: translate({ id: "homepage.features.news.title", message: "They get sold in hours" }),
-    imageUrl: "img/features/for_sale.svg",
-    description: translate({
-      id: "homepage.features.news.description",
-      message: "Don't. Even. Bother.",
-    }),
-  },
-  {
-    title: translate({ id: "homepage.features.pressConference.title", message: "We have been using AI to predict house prices..." }),
-    imageUrl: "img/features/analytics.svg",
+    title: translate({ id: "homepage.features.pressConference.title", message: "MLOps" }),
+    imageUrl: "img/features/coding.svg",
     description: translate({
       id: "homepage.features.pressConference.description",
-      message: "...and after seeing the result decided to move to Spain.",
+      message: "... to find an interesting opportunity while learning new programming tools :)",
     }),
   },
 ];
@@ -59,18 +59,18 @@ function Banner() {
         <Link
           title={translate({ id: "homepage.hero.logoLink.title", message: "logoLink Title" })}
         >
-          <img className={styles.heroLogo} src={useBaseUrl("/img/city_girl.svg")} alt="Website Logo" />
+          <img className={styles.heroLogo} src={useBaseUrl("/img/choosing_house.svg")} alt="Website Logo" />
         </Link>
         <div className={styles.heroText}>
           <h1 className={styles.heroTitle}>
-            <Translate id="homepage.hero.title">Warsaw flats</Translate>
+            Valencia <br></br>flat finder
           </h1>
           <p
             className={styles.heroTagline}
             dangerouslySetInnerHTML={{
               __html: translate({
                 id: "homepage.hero.tagline",
-                message: "Roses are red<br>Violets are blue<br>I can't afford a flat<br>And neither can you &#129394",
+                message: "Roses are red<br>Violets are blue<br>I am using ML<br>to make dreams come true",
                 description: "Homepage hero tagline, can contain simple html tags",
               }),
             }}

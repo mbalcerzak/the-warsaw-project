@@ -25,7 +25,7 @@ There are some things I would do differently with the knowledge I have now but t
 |:---------------| --------------- |
 | Is Raspberry Pi OK or should I use something like AWS Lambda? | Raspberry Pi is cheaper and does the job so far |
 | Checking the price was too slow | Instead of checking the database itself (to see if the ad is already present) I query it in the beginning, load results to JSON and check this file. That also reduced the number of times teh database got locked beyond repair|
-| I gathered more than 500k ads last year and there are only 2mln people in Warsaw | Database might contain duplicates and I will need to remove them during cleaning | 
+| I gathered more than 500k ads last year and there are only 2mln people in Valencia | Database might contain duplicates and I will need to remove them during cleaning | 
 | Power outages (and me moving flats) caused gaps in data | ¯\\_(ツ)_/¯ A cloud scraper would be more robust and reliable but I am not a millionare 💸 | 
 
 ## ... database

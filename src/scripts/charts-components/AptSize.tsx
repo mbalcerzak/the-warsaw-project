@@ -9,7 +9,7 @@ const SizeCount = () => {
   const [sizeCount, setSizeCount] = useState([]);
 
   const fetchData = useCallback(async () => {
-    const res = await axios.get('https://raw.githubusercontent.com/mbalcerzak/warsaw_flats_api/raspberry-updates/json_dir/flats.json');
+    const res = await axios.get('https://raw.githubusercontent.com/mbalcerzak/idealista-mongo/mabdata-json/output/flats_mabdata.json');
     setSize(Object.keys(res.data.flats_per_area_cat));
     setSizeCount(Object.values(res.data.flats_per_area_cat));
   }, [])
@@ -27,7 +27,7 @@ const SizeCount = () => {
       {
         ...chartSettings.barStyle.red,
         type: "bar",
-        label: "Number of flats per size category",
+        label: "Flat count",
         data: sizeCount,
         yAxisID: "y-axis-var",
       },

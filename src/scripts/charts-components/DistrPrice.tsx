@@ -21,7 +21,7 @@ const Cases = ({ flatArea, district}) => {
   const [months, setMonths] = useState([]);
 
   const fetchData = useCallback(async () => {
-    const res = await axios.get('https://raw.githubusercontent.com/mbalcerzak/warsaw_flats_api/raspberry-updates/json_dir/flats.json');
+    const res = await axios.get('https://raw.githubusercontent.com/mbalcerzak/idealista-mongo/mabdata-json/output/flats_mabdata.json');
     setFlatsData(res.data.price_m_loc_area_cat.map(t=>t));
     setMonths(Array.from(new Set(res.data.price_m_loc_area_cat.map((item) => item.month))));
     setAveragePricesCat(res.data.price_m_loc_area_cat.filter(f => f.location === district && f.area_category === flatArea).map(f => f.avg_price_per_m));
@@ -120,8 +120,8 @@ const Cases = ({ flatArea, district}) => {
 // --------
 
 export const PriceDistrictMonth = () => {
-  const [flatArea, setFlatArea] = React.useState('40_50');
-  const [district, setDistrict] = React.useState('Mokotów');
+  const [flatArea, setFlatArea] = React.useState('120-140m');
+  const [district, setDistrict] = React.useState('Russafa');
 
   const handleChange = (event) => {
     setFlatArea(event.target.value);
