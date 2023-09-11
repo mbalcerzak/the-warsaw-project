@@ -133,15 +133,6 @@ export const PriceDistrictMonth = () => {
 
   return (
     <>
-      {/* <div className="chart-title">
-        <Translate
-          id="chartsComp.PriceDistrictMonth.title"
-          description="Historical prices for a flat of size: <flatArea>"
-          values={{ flatArea: flatArea, district: district }}
-        >
-          {"Historical prices for {flatArea} m2 flats in {district}"}
-        </Translate>
-      </div> */}
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Size of the apartment</InputLabel>
           <Select
