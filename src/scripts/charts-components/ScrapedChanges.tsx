@@ -25,7 +25,7 @@ const Scraped = () => {
     datasets: [
       {
         ...chartSettings.lineStyle.orange,
-        label: "Scraped (Moving Average, 5 days)",
+        label: "Scraped (Moving Average, 10 days)",
         data: scrapedAvg,
         fill: false,
         yAxisID: "y-axis-cumul",

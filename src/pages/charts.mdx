@@ -19,8 +19,8 @@ import { SizeCountGraph } from "@site/src/scripts/charts-components/AptSize";
 
 ## Number of ads scraped per day {#scraped}
 <p className="subtitle">
-Number of flats scraped per day varies greatly due to the CRONJOB running locally on my private computer.
-I am moving a lot, travelling, this is a hobby project and a more "production worthy" deployment is coming! </p>
+Data is gathered daily using CRONJOB. Due to limitations put on free-tier Idealista API 
+access, number of flats scraped per day is relatively small </p>
 
 <AdsScraped />
 
@@ -28,6 +28,6 @@ I am moving a lot, travelling, this is a hobby project and a more "production wo
 
 <LocationCountGraph />
 
-## Number of flats per number of rooms
+## Number of flats per size category
 
 <SizeCountGraph />
