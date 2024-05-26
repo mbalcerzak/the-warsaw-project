@@ -10,72 +10,148 @@ autoCollapseSidebarCategories: false
 import Link from "@docusaurus/Link";
 
 
-## Business problem
----
+## Project Schema: Buying a Flat in Spain Using the Newest Technologies
 
-The aim of this project is to build a model that would help me 
-identify a good investment opportunity (overpriced or undervalued apartment in Valencia). 
-The model would predict a price given the data and indicate whether the actual price 
-is too high or too low. 
+### Introduction
 
-## [Gathering the data](/Data/1_data_scraping.md)
----
+1. **Overview of the Project**
+   - Objective: To leverage modern technologies in the process of buying a flat in Spain.
+   - Scope: Utilizing machine learning, cloud computing, and DevOps practices to streamline the property search, evaluation, and purchase processes.
 
-#### Built with:
-- [Python 3.9](https://www.python.org/)
-- [Scrapy](https://scrapy.org/)
+2. **Relevance of Technologies**
+   - Explanation of why incorporating these technologies is beneficial.
+   - Current trends and advancements in real estate and tech integration.
 
-#### Database:
-- [MongoDB](https://www.mongodb.com/)
+### Step 1: Defining the Requirements
 
-#### Output API:
-- JSON hosted on [GitHub](https://github.com/mbalcerzak/Valencia_flats_api/tree/raspberry-updates/json_dir)
+1. **Identify User Needs**
+   - Location preferences (neighborhoods, proximity to my places of interest).
+   - Budget constraints.
+   - Specific requirements (size of the flat, amenities, terrace, elevator, etc.).
 
-#### Scraper:
-- on [Raspberry Pi](https://www.raspberrypi.org/)
-- using [Cron](https://crontab.guru/)
-- from [idealista.com](https://www.idealista.com/)
+2. **Data Sources**
+   - Real estate websites and databases ([Idealista.com](https://www.idealista.com/), Fotocasa, etc.).
+   - Public data (crime rates, school quality, environmental factors).
+   - Market trends and price analytics.
 
-#### Price changes
-The script checks if the apartment is already present in the database and if yes, if the price has changed.
+### Step 2: Data Collection and Preprocessing
 
+1. **Web Scraping and APIs**
+   - Tools: Scrapy, BeautifulSoup, Selenium.
+   - Real estate APIs: Integrating with platforms providing property listings. I have been using Idealista API for the past year
+   - Scraper set up on [Raspberry Pi](https://www.raspberrypi.org/) using [Cron](https://crontab.guru/)
+   - The script checks if the apartment is already present in the database and if yes, if the price has changed.
 
-## Basic statistics
----
-The average price for every month per every district of Valencia and apartment "category size" is calulated and output as REST API.
-Data is (was) updated daily. The last update was performed in February 2022 due to no new advertisements being 
-published on gumtree after the Ukraine War started.
+2. **Data Cleaning**
+   - Handling missing values.
+   - Normalizing data (consistent formats for prices, addresses, etc.).
 
-Aggregated statistics include:
-- average price per square metre durign each month, per district per size category
-- daily number of posted advertisements
-- number of price changes on a given day 
+3. **Data Storage**
+   - Cloud database: MongoDB
 
+### Step 3: Machine Learning Model Development
 
-## Model building
----
-- [Python 3.9](https://www.python.org/)
-- [scikit-learn](https://scikit-learn.org/stable/)
-- [PyTorch](https://pytorch.org/)
+1. **Model Selection**
+   - Types: Supervised learning for price prediction, unsupervised learning for clustering similar properties.
+   - Algorithms: Linear Regression, Random Forest, K-Means Clustering.
 
-## Pipeline
----
+2. **Model Training**
+   - Dataset: Historical property prices, features (size, location, amenities).
+   - Frameworks: TensorFlow, PyTorch, Scikit-learn.
 
-- https://github.com/mbalcerzak/Valencia-real-estate-cleaning
-- https://github.com/mbalcerzak/Valencia-real-estate-analysis
-- https://github.com/mbalcerzak/apartment-price-model
+3. **Model Evaluation**
+   - Metrics: Mean Absolute Error (MAE), R-squared.
+   - Cross-validation techniques.
 
-## Production
----
+### Step 4: Cloud Infrastructure and Deployment
 
+1. **Cloud Providers**
+   - AWS, Google Cloud, Azure, MongoDB
 
-## This website
----
+2. **CI/CD Pipeline**
+   - Tools: Jenkins, CircleCI, GitLab CI.
+   - Steps: Code integration, automated testing, continuous deployment.
 
-#### Built with
-- [Docusaurus](https://docusaurus.io/)
-- Typescript
-- React
+3. **Containerization and Orchestration**
+   - Docker: Containerizing the ML models and applications.
+   - Kubernetes: Managing container deployment, scaling, and operations.
 
-#### Deployed on 
-- Neflity
+### Step 5: DevOps Practices
+
+1. **Infrastructure as Code (IaC)**
+   - Tools: Terraform, AWS CloudFormation, Azure Resource Manager.
+   - Automation of infrastructure setup and management.
+
+2. **Monitoring and Logging**
+   - Tools: Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana).
+   - Setting up alerts and dashboards for real-time monitoring.
+
+3. **Security**
+   - Practices: Encryption, Identity and Access Management (IAM), Secure APIs.
+   - Tools: AWS IAM, Azure Security Center, Google Cloud Identity.
+
+### Step 6: Showcasing the results
+
+   - Frameworks: React, JavaScript, Docusaurus
+   - Features: Property search filters, interactive maps, price predictions.
+   - Hosting: Netlify
+
+### Step 7: Testing and Feedback
+
+1. **User Testing**
+   - Beta testing with a group of users.
+   - Collecting feedback for improvements.
+
+2. **Iterative Improvement**
+   - Implementing changes based on user feedback.
+   - Continuous improvement cycle.
+
+### Step 8: Final Deployment and Maintenance
+
+1. **Deployment Strategy**
+   - Phased rollout, blue-green deployment.
+
+2. **Post-Deployment Monitoring**
+   - Continuous monitoring of application performance and user feedback.
+
+3. **Maintenance Plan**
+   - Regular updates, bug fixes, and feature enhancements.
+
+### Conclusion
+
+1. **Summary of the Project**
+   - Recap of the technologies used and their impact on the project.
+
+2. **Future Directions**
+   - Potential enhancements (e.g., integration of VR tours, blockchain for secure transactions).
+
+### Quick summary of stack used in this project
+
+1. **Machine Learning Models**
+   - Proficiency in ML frameworks and algorithms (TensorFlow, PyTorch, Scikit-learn).
+
+2. **Cloud Computing**
+   - Experience with AWS, Google Cloud, Azure.
+
+3. **DevOps Skills**
+   - CI/CD, containerization (Docker), orchestration (Kubernetes).
+
+4. **Data Engineering**
+   - Data pipelines, ETL processes, big data technologies.
+
+5. **Programming Languages**
+   - Python, React
+
+6. **Infrastructure as Code (IaC)**
+   - Terraform, CloudFormation.
+
+7. **Monitoring and Logging**
+   - Prometheus, Grafana, ELK Stack.
+
+8. **Security Best Practices**
+   - IAM, encryption, secure coding practices.
+
+9. **Front-end development**
+   - Interactive website hosted on Netlify, built with React
+
+This step-by-step schema provides a comprehensive guide to executing a tech-driven project for buying a flat in Spain, while also highlighting the essential skills for a Machine Learning Ops Engineer in today's market.
