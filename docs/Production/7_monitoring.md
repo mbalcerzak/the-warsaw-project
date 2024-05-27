@@ -1,8 +1,9 @@
 ---
-title: 7. Monitoring
+title: Monitoring and logging
 description: ML maintenance
 hide_table_of_contents: false
 sidebar_position: 7
+autoCollapseSidebarCategories: false
 ---
 
 
