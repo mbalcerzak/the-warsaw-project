@@ -51,7 +51,7 @@ I am logging the scraper results to check if the run was completed succesfully a
 Scraped flats: 380
 
 Properties for sale
-Inserted: 267, 113 found already existing. Price changes: 12
+Inserted: 267, 113 found already in the database. Price changes: 12
 ```
 
 A Python script runs each day to pick listings with the highest numer of price changes or the ones for which the price got lower most recently. 
