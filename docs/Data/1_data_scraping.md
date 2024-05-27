@@ -3,148 +3,75 @@ title: Gathering the data
 description: Scraping
 hide_table_of_contents: false
 sidebar_position: 1
+autoCollapseSidebarCategories: false
 ---
 
 
-All the data gathered comes from [gumtree.pl](www.gumtree.pl). The whole code is available here [GitHub repo](https://github.com/mbalcerzak/mab_szuka_mieszkania).
-
-
-![img](../../images/ads_scraped.png)
-
-Issues with data gathering (marked on the image above):  
-1. Heavy storm, internet problems
-2. Moving flats
-3. Internet issues while I was away for the whole month
-4. Gumtree closed in Poland
+All the data gathered so far comes from [Idealista.com](https://www.idealista.com/). The whole repository is available here [GitHub repo](https://github.com/mbalcerzak/idealista-mongo).
 
 
 ## Raspberry Pi
 ----
 
-- I set up the scraper on a **Raspberry Pi 3B**
-- It was being triggered by a **CRONJOB** every hour 
-- Every week the scheduled script was uploading an SQLite file on my Google Drive as a **back-up**.
+- Scraper set up on a **Raspberry Pi 3B**
+- It was being triggered by a **CRONJOB** every day 
+- Python script creates JSON with [most interesting flats](https://raw.githubusercontent.com/mbalcerzak/idealista-mongo/mabdata-json/output/latest_price_changes.json) to showcase on the website under ["Flats" tab](http://localhost:3000/flats)
 
-Initially I made it send me an email every evening with a simple report to check if it works.  
-
-## Scrapy & BeautifulSoup
+## Scraping
 ----
 
-I was interested in obtaining as much information from each ad as possible. On top of all the flat characteristics I was also regularly checking the **price changes** to check if any price changed significantly.
+Idealista API permits to request 2000 listings per month. You have to request a key [here]() to be granted developer access
+
+![api_access](../../images/idealista_api.png)
+
 
 ```python
 
-class BlogSpider(scrapy.Spider):
-    name = "gumtree"
-
-    with open('../start_urls.json', 'r') as f:
-        start_urls = json.load(f)
-
-    def parse(self, response):
-        try:
-            conn = sqlite3.connect('../data/flats.db')
-            cursor = conn.cursor()
-        except sqlite3.Error as e:
-            raise Exception
-
-        latest_prices = get_latest_prices_json()
-        today = date.today().strftime("%Y-%m-%d")
-        
-        if latest_prices['date'] != today:
-            raise Exception("Update 'latest price JSON' ")
-
-        for flat_ad in response.css('div.tileV1'):
-            page_address = get_page_address(flat_ad)
-            ad_price = get_ad_price(flat_ad)
-            ad_id = get_ad_id(page_address)
-
-            if ad_id in latest_prices:
-                try:
-                    if int(latest_prices[ad_id]) != int(ad_price):
-                        update_price(cursor, ad_id, ad_price, conn)
-                except ValueError:
-                    print(f"Wrongly put price: {ad_price}")
-            else:
-                add_flat(page_address, cursor, conn)
-
-        try:
-            next_page = get_next_page(response)
-            get_page_info(next_page)
-            conn.close()
-
-            if next_page is not None:
-                yield response.follow(next_page, self.parse)
-
-        except KeyError:
-            print(info_scraped_today(cursor))
-            print("We reached our 50 pages")
+class BasicParams:
+    def __init__(self):
+        self.locationId = "0-EU-ES-46"
+        self.propertyType = "homes"
+        self.order = "publicationDate"
+        self.locale = "es"
 
 ```
 
-I found each element on the page and loaded it into the database
+I am looking for an apartment in Valencia ("0-EU-ES-46"). Scraper runs each day in the morning
 
-```python
+```bash
+source .venv/bin/activate
 
-def get_ad_price(flat) -> int:
-    """Find price information"""
-    price = flat.css('span.ad-price::text').get()
-    price = re.sub("[^\d\.,]", "", price)
-    return price
+now=$(date +"%m_%d_%Y")
+.venv/bin/python3.9 src/db_mongo.py --pages 20 &> "logs/log_inside_${now}"
 
 ```
-
-Before each run of the scraper I was updating the list of latest price of each flat. If the current price was differnt from the most recent from the table, a new record was created with a timestamp.
-
-```python
-
-def query_latest_price(cursor) -> dict:
-    json_prices = {}
-
-    query = """ 
-            SELECT max(price_id) AS max_id, ad_id, price
-            FROM prices
-            LEFT JOIN flats ON flats.flat_id = prices.flat_id
-            GROUP BY ad_id
-            """
-
-    cursor.execute(query)
-    latest_prices = cursor.fetchall()
-
-    for row in latest_prices:
-        flat_id = str(row[1])
-        price = row[2]
-        json_prices[flat_id] = price
-
-    today = date.today().strftime("%Y-%m-%d")
-    json_prices['date'] = today
-
-    return json_prices
+I am logging the scraper results to check if the run was completed succesfully and see the statistics at the end.
 
 ```
+Scraped flats: 380
 
-# Database design
----
+Properties for sale
+Inserted: 267, 113 found already existing. Price changes: 12
+```
 
-I can safly say that the database is now ni [Third Normal Form](https://en.wikipedia.org/wiki/Third_normal_form#:~:text=Third%20normal%20form%20(3NF)%20is,in%201971%20by%20Edgar%20F.) :)
+A Python script runs each day to pick listings with the highest numer of price changes or the ones for which the price got lower most recently. 
+```json
+{
+    "propertyCode": "100002920",
+    "prices": [
+        410000,
+        405000,
+        395000,
+        394900,
+        394800
+    ],
+    "dates": [
+        "2023-01-04",
+        "2023-02-01",
+        "2023-03-31",
+        "2023-09-07",
+        "2023-09-13"
+    ]
+}, ...
+```
 
-#### 1NF
-- Each table cell contains a single value
-- Each record is unique
-
-#### 2NF
-- Single Column Primary Key that does not functionally dependant on any subset of candidate key relation
-
-#### 3NF
-- There are no transitive functional dependencies
-
-
-
-## Flats table
-
-![flats](../../images/flats_table1.png)
-
-## Prices table
-
-Related to Flats table via a Foreign Key
-
-![prices](../../images/prices_table.png)

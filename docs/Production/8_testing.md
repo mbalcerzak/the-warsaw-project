@@ -1,8 +1,9 @@
 ---
-title: 8. Data Drift
+title: Data Drift
 description: Artificially created data drift test
 hide_table_of_contents: false
 sidebar_position: 8
+autoCollapseSidebarCategories: false
 ---
 
 
