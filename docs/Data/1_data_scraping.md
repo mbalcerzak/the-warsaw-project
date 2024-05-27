@@ -15,12 +15,12 @@ All the data gathered so far comes from [Idealista.com](https://www.idealista.co
 
 - Scraper set up on a **Raspberry Pi 3B**
 - It was being triggered by a **CRONJOB** every day 
-- Python script creates JSON with [most interesting flats](https://raw.githubusercontent.com/mbalcerzak/idealista-mongo/mabdata-json/output/latest_price_changes.json) to showcase on the website under ["Flats" tab](http://localhost:3000/flats)
+- Python script creates JSON with [most interesting flats](https://raw.githubusercontent.com/mbalcerzak/idealista-mongo/mabdata-json/output/latest_price_changes.json) to showcase on the website under ["Flats" tab](https://mabdata.com/flats)
 
 ## Scraping
 ----
 
-Idealista API permits to request 2000 listings per month. You have to request a key [here]() to be granted developer access
+Idealista API permits to request 2000 listings per month. You have to request a key [here](https://developers.idealista.com/access-request) to be granted developer access
 
 ![api_access](../../images/idealista_api.png)
 
