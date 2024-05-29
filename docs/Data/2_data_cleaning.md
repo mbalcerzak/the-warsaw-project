@@ -45,3 +45,10 @@ Preparing natural language data for machine learning involves several steps to e
 
 
 Preparing natural language data for machine learning involves cleaning the data to remove noise and inconsistencies, normalizing it for uniformity, and creating features that capture the semantic and syntactic characteristics of the text. Proper data preparation ensures that the machine learning models perform well and generalize effectively. 
+
+
+Decstiption:
+- size of the terrace
+- okupas
+- adjectives to describe the flat
+- 

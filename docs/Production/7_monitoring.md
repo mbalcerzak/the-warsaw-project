@@ -7,6 +7,8 @@ autoCollapseSidebarCategories: false
 ---
 
 
+![grafana](../../images/grafana_setup.png)
+
 ## Ground Truth Evaluation
 
 Most important step is to train ground truth model. In case of this project the label is apartment price. Fortunately in this case the "true" price specified by the owner/agency is available so it's feasible to check the model accuracy real time. 
