@@ -75,3 +75,12 @@ A Python script runs each day to pick listings with the highest numer of price c
 }, ...
 ```
 
+
+## MongoDB
+
+I store data in MongoDB. I chose NoSQL for it's flexibility and scalability. There is no schema and some listings might have additional features that others don't. If data changes drastially, I won't have to perform a complex migration. If I decide one day to store pictures, I can just store them alongside the rest of my data (MongoDB allows for variety of data types). 
+
+Another reason was that it is a popular tool and as I have worked with mostly SQL before, I wanted to try and learn something new. 
+
+![mongopng](../../images/mongodb_clusters.png)
+

@@ -18,7 +18,7 @@ Preparing natural language data for machine learning involves several steps to e
 - **Remove Punctuation**: Strip punctuation marks, which are often unnecessary for many NLP tasks.
 - **Remove Special Characters**: Eliminate characters that do not contribute to the understanding of the text.
 - **Stop Words Removal**: Remove common words that do not carry significant meaning (e.g., "and", "the", "is").
-- **Stemming/Lemmatization**: Reduce words to their base or root form. Stemming might reduce "running" to "run", while lemmatization ensures "better" becomes "good".
+- **Stemming/Lemmatization**: Reduce words to their base or root form. Stemming might reduce "running" to "run", while lemmatization ensures "better" becomes "good". I chose to just lemmatize for now
 
 ## 2. Data Normalization
 - **Spelling Correction**: Correct misspelled words to ensure consistency.  
