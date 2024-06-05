@@ -37,13 +37,13 @@ import Link from "@docusaurus/Link";
 
 ### Step 2: Data Collection and Preprocessing
 
-1. **Web Scraping and APIs**
+1. [**Web Scraping and APIs**](Data/1_data_scraping.md)
    - Tools: Scrapy, BeautifulSoup, Selenium.
    - Real estate APIs: Integrating with platforms providing property listings. I have been using Idealista API for the past year
    - Scraper set up on [Raspberry Pi](https://www.raspberrypi.org/) using [Cron](https://crontab.guru/)
    - The script checks if the apartment is already present in the database and if yes, if the price has changed.
 
-2. **Data Cleaning**
+2. [**Data Cleaning**](Data/2_data_cleaning.md)
    - Handling missing values.
    - Normalizing data (consistent formats for prices, addresses, etc.).
 
@@ -53,7 +53,7 @@ import Link from "@docusaurus/Link";
 
 ### Step 3: Machine Learning Model Development
 
-1. **Model Selection**
+1. [**Model Selection**](Models/5_models.md)
    - Types: Supervised learning for price prediction, unsupervised learning for clustering similar properties.
    - Algorithms: Linear Regression, Random Forest, K-Means Clustering.
 
@@ -66,6 +66,8 @@ import Link from "@docusaurus/Link";
    - Cross-validation techniques.
 
 ### Step 4: Cloud Infrastructure and Deployment
+
+See the cloud setup for this project [here](Production/6_cloud.md)
 
 1. **Cloud Providers**
    - AWS
@@ -84,7 +86,7 @@ import Link from "@docusaurus/Link";
    - Tools: Terraform, AWS CloudFormation, Azure Resource Manager.
    - Automation of infrastructure setup and management.
 
-2. **Monitoring and Logging**
+2. [**Monitoring and Logging**](Production/7_monitoring.md)
    - Tools: Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana).
    - Setting up alerts and dashboards for real-time monitoring.
 
