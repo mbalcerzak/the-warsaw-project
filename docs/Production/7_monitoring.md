@@ -28,13 +28,14 @@ The pie chart presents a clear count of flats available per district, allowing u
 > You can see the dashbard in real-time here [mbalcerzak.grafana.net](https://mbalcerzak.grafana.net/goto/XgRMzyySR?orgId=1)
 
 ## MLFlow
-Model repository
+
+MLFlow provides a centralized platform for tracking and managing machine learning experiments, ensuring reproducibility and transparency of results. It simplifies the deployment process by offering tools to package and share models across different environments, facilitating seamless integration into production systems. Additionally, MLFlow supports collaboration among team members by maintaining detailed logs and versions of data, code, and configurations, enhancing team productivity and project coherence.
 
 
 
 
 
-## Ground Truth Evaluation
+<!-- ## Ground Truth Evaluation
 
 Most important step is to train ground truth model. In case of this project the label is apartment price. Fortunately in this case the "true" price specified by the owner/agency is available so it's feasible to check the model accuracy real time. 
 
@@ -55,4 +56,4 @@ And we should also look at those metrict in subpopulations.
 
 Data distribution should not diverge too much between the training and testing phases. 
 
-Usually data drift occurs due to the training data collected not representing the target population. 
+Usually data drift occurs due to the training data collected not representing the target population.  -->

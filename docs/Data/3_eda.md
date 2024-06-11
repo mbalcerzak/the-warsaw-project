@@ -16,5 +16,3 @@ autoCollapseSidebarCategories: false
 - compare schema of training and validation datasets
 
 - calculate and display anomalies
-
-- 
