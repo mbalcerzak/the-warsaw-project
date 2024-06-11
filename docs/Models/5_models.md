@@ -25,14 +25,6 @@ For predicting real estate prices, especially with a dataset that includes histo
 4. **Hybrid Models**:
    - Combining ARIMA with machine learning models (e.g., ARIMA with XGBoost or LSTM) to capture both linear and non-linear patterns in the data.
 
-### Feature Engineering
-Regardless of the model, feature engineering plays a critical role in the performance of your prediction. Here are some features you might consider:
-- **Historical Prices**: Lagged values of past prices.
-- **Rolling Statistics**: Rolling means, standard deviations, and other statistics over different time windows.
-- **External Factors**: Economic indicators, interest rates, and other macroeconomic variables.
-- **Property Features**: Size, number of rooms, location-specific features.
-- **Temporal Features**: Time of year, day of the week, seasonality factors.
-
 ### Workflow
 1.  **Model Selection**:
    - Start with simpler models like linear regression or ARIMA to establish a baseline.

@@ -8,7 +8,7 @@ autoCollapseSidebarCategories: false
 
 # f(🗑) -> 🗑  so let's clean it up!
 
-Preparing natural language data for machine learning involves several steps to ensure the data is clean, consistent, and in a format suitable for model training. We also want to create new features from the description e.g. size of the terrace or if the flat is occupied illegally ("okupas", you can read more about the fenomenon [here](https://www.idealista.com/en/news/legal-advice-in-spain/2024/04/15/816509-squatting-in-spain-understanding-spain-s-okupas-problem#:~:text=of%20such%20actions.-,The%20rise%20of%20the%20'okupa'%3A%20Economic%20crisis%20and%20housing,blend%20of%20socio%2Deconomic%20factors.))
+Preparing natural language data for machine learning involves several steps to ensure the data is clean, consistent, and in a format suitable for model training. We also want to create new features from the description e.g. size of the terrace or if the flat is occupied illegally (read more here - ["okupas"](https://www.idealista.com/en/news/legal-advice-in-spain/2024/04/15/816509-squatting-in-spain-understanding-spain-s-okupas-problem#:~:text=of%20such%20actions.-,The%20rise%20of%20the%20'okupa'%3A%20Economic%20crisis%20and%20housing,blend%20of%20socio%2Deconomic%20factors.))
 
 ## 1. Data Cleaning  
 
@@ -46,9 +46,47 @@ Preparing natural language data for machine learning involves several steps to e
 
 Preparing natural language data for machine learning involves cleaning the data to remove noise and inconsistencies, normalizing it for uniformity, and creating features that capture the semantic and syntactic characteristics of the text. Proper data preparation ensures that the machine learning models perform well and generalize effectively. 
 
+```python
+import spacy
 
-Decstiption:
-- size of the terrace
-- okupas
-- adjectives to describe the flat
-- 
+def clean_description(description: str) -> str:
+    # Lowercasing: Convert all text to lowercase to maintain uniformity.  
+    description = description.lower()
+    
+    # Remove Punctuation and Special Characters
+    description = re.sub(r'[^\w\s]', ' ', description)
+    
+    # Remove numbers
+    description = ''.join([i for i in str(description) if not i.isdigit()])
+
+    # Tokenization: Split text into words
+    description = description.split()
+
+    # # Stop Words Removal: Remove common words that do not carry significant meaning 
+    # (e.g., "hay", "a", "mucho", "mis" ...).
+    stopwords = load_stopwords_es()
+    description_no_stopwords = [x for x in description if x not in stopwords]
+    
+    # Lemmatization: Reduce words to their base or root form. 
+    # Stemming might reduce "running" to "run", 
+    # while lemmatization ensures "better" becomes "good".
+    nlp = spacy.load("es_core_news_sm")
+    doc = nlp(" ".join(description_no_stopwords))
+
+    # Extract lemmas
+    lemmas = [token.lemma_ for token in doc]
+
+    return " ".join(lemmas)
+```
+
+I also created new features using One Hot Encoding. District name and state of the apartment (new / good / for renovation) are now features. 
+
+Here are some key points to watch out for when creating new features for a machine learning model:
+
+-  Ensure that the new features have a logical connection to the target variable. (to not add noise to the model)
+- Predictive Power: Use techniques like correlation analysis, mutual information, and feature importance scores to evaluate the predictive power of the new features.
+- Redundancy: Check for multicollinearity, which occurs when two or more features are highly correlated. This can cause issues in some models, like linear regression. Use variance inflation factor (VIF) or correlation matrices to identify and address multicollinearity.
+- Curse of Dimensionality: Adding too many features can lead to the curse of dimensionality, where the model becomes more complex and harder to train, often leading to overfitting. Use dimensionality reduction techniques like PCA or feature selection methods to manage the number of features.
+- Computational Efficiency: Consider the computational cost of creating and using new features. Features that require extensive computation might slow down the model training and prediction processes.
+- Complexity: Avoid overly complex features that are difficult to interpret. Simple and interpretable features are generally preferable.
+- Generalization: Ensure that the new features do not cause the model to overfit the training data. Overfitting occurs when the model learns the noise in the training data instead of the underlying patterns. Cross-validation and regularization techniques can help mitigate overfitting.
